@@ -16,6 +16,7 @@
 		553295B527DCC09200DA82EB /* initial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B427DCC09200DA82EB /* initial.swift */; };
 		553295B927DCC0AA00DA82EB /* initial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B827DCC0AA00DA82EB /* initial.swift */; };
 		553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295BE27DCC2F100DA82EB /* AuthManager.swift */; };
+		5562766827DCCC8200012A49 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5562766727DCCC8200012A49 /* DashboardVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		553295B427DCC09200DA82EB /* initial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initial.swift; sourceTree = "<group>"; };
 		553295B827DCC0AA00DA82EB /* initial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initial.swift; sourceTree = "<group>"; };
 		553295BE27DCC2F100DA82EB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		5562766727DCCC8200012A49 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		553295AF27DCC03500DA82EB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5562766527DCCC5E00012A49 /* Dashboard */,
 				5532959C27DCC00700DA82EB /* ViewController.swift */,
 			);
 			path = Controllers;
@@ -130,6 +133,14 @@
 				553295BE27DCC2F100DA82EB /* AuthManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		5562766527DCCC5E00012A49 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				5562766727DCCC8200012A49 /* DashboardVC.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +215,7 @@
 			files = (
 				553295B527DCC09200DA82EB /* initial.swift in Sources */,
 				553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */,
+				5562766827DCCC8200012A49 /* DashboardVC.swift in Sources */,
 				553295B927DCC0AA00DA82EB /* initial.swift in Sources */,
 				5532959D27DCC00700DA82EB /* ViewController.swift in Sources */,
 				5532959927DCC00700DA82EB /* AppDelegate.swift in Sources */,
