@@ -13,6 +13,9 @@
 		553295A027DCC00700DA82EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5532959E27DCC00700DA82EB /* Main.storyboard */; };
 		553295A227DCC00A00DA82EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553295A127DCC00A00DA82EB /* Assets.xcassets */; };
 		553295A527DCC00A00DA82EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553295A327DCC00A00DA82EB /* LaunchScreen.storyboard */; };
+		553295B527DCC09200DA82EB /* initial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B427DCC09200DA82EB /* initial.swift */; };
+		553295B927DCC0AA00DA82EB /* initial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B827DCC0AA00DA82EB /* initial.swift */; };
+		553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295BE27DCC2F100DA82EB /* AuthManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		553295A127DCC00A00DA82EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		553295A427DCC00A00DA82EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		553295A627DCC00A00DA82EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		553295B427DCC09200DA82EB /* initial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initial.swift; sourceTree = "<group>"; };
+		553295B827DCC0AA00DA82EB /* initial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initial.swift; sourceTree = "<group>"; };
+		553295BE27DCC2F100DA82EB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,74 @@
 		5532959727DCC00700DA82EB /* EmotionDetectionApp */ = {
 			isa = PBXGroup;
 			children = (
-				5532959827DCC00700DA82EB /* AppDelegate.swift */,
-				5532959A27DCC00700DA82EB /* SceneDelegate.swift */,
-				5532959C27DCC00700DA82EB /* ViewController.swift */,
-				5532959E27DCC00700DA82EB /* Main.storyboard */,
-				553295A127DCC00A00DA82EB /* Assets.xcassets */,
-				553295A327DCC00A00DA82EB /* LaunchScreen.storyboard */,
+				553295BC27DCC0D900DA82EB /* Managers */,
+				553295B227DCC07800DA82EB /* Models */,
+				553295B027DCC05400DA82EB /* Views */,
+				553295B327DCC08100DA82EB /* Presenters */,
+				553295AF27DCC03500DA82EB /* Controllers */,
+				553295AD27DCC01700DA82EB /* Resources */,
 				553295A627DCC00A00DA82EB /* Info.plist */,
 			);
 			path = EmotionDetectionApp;
+			sourceTree = "<group>";
+		};
+		553295AD27DCC01700DA82EB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5532959827DCC00700DA82EB /* AppDelegate.swift */,
+				5532959A27DCC00700DA82EB /* SceneDelegate.swift */,
+				553295A127DCC00A00DA82EB /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		553295AF27DCC03500DA82EB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5532959C27DCC00700DA82EB /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		553295B027DCC05400DA82EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				553295B127DCC05B00DA82EB /* storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		553295B127DCC05B00DA82EB /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5532959E27DCC00700DA82EB /* Main.storyboard */,
+				553295A327DCC00A00DA82EB /* LaunchScreen.storyboard */,
+			);
+			path = storyboards;
+			sourceTree = "<group>";
+		};
+		553295B227DCC07800DA82EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				553295B827DCC0AA00DA82EB /* initial.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		553295B327DCC08100DA82EB /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				553295B427DCC09200DA82EB /* initial.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		553295BC27DCC0D900DA82EB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				553295BE27DCC2F100DA82EB /* AuthManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +202,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553295B527DCC09200DA82EB /* initial.swift in Sources */,
+				553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */,
+				553295B927DCC0AA00DA82EB /* initial.swift in Sources */,
 				5532959D27DCC00700DA82EB /* ViewController.swift in Sources */,
 				5532959927DCC00700DA82EB /* AppDelegate.swift in Sources */,
 				5532959B27DCC00700DA82EB /* SceneDelegate.swift in Sources */,
@@ -216,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -289,6 +357,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TCD4XHJF85;
 				INFOPLIST_FILE = EmotionDetectionApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +365,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.sliem.EmotionDetectionApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,6 +377,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TCD4XHJF85;
 				INFOPLIST_FILE = EmotionDetectionApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +385,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.sliem.EmotionDetectionApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
