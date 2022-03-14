@@ -14,11 +14,20 @@
 		553295A027DCC00700DA82EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5532959E27DCC00700DA82EB /* Main.storyboard */; };
 		553295A227DCC00A00DA82EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553295A127DCC00A00DA82EB /* Assets.xcassets */; };
 		553295A527DCC00A00DA82EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553295A327DCC00A00DA82EB /* LaunchScreen.storyboard */; };
-		553295B527DCC09200DA82EB /* initial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B427DCC09200DA82EB /* initial.swift */; };
-		553295B927DCC0AA00DA82EB /* initial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B827DCC0AA00DA82EB /* initial.swift */; };
+		553295B527DCC09200DA82EB /* initialPre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B427DCC09200DA82EB /* initialPre.swift */; };
+		553295B927DCC0AA00DA82EB /* initialMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B827DCC0AA00DA82EB /* initialMod.swift */; };
 		553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295BE27DCC2F100DA82EB /* AuthManager.swift */; };
 		553426F827DD353B0079F268 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553426F727DD353B0079F268 /* Dashboard.storyboard */; };
 		553426FC27DD5B950079F268 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553426FB27DD5B950079F268 /* Extenstions.swift */; };
+		554F797427DE4715003A97C4 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F797327DE4715003A97C4 /* DashboardPresenter.swift */; };
+		554F797827DE5A61003A97C4 /* RecommendationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F797727DE5A61003A97C4 /* RecommendationCell.swift */; };
+		554F797E27DE8C73003A97C4 /* callAnalysis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 554F797D27DE8C73003A97C4 /* callAnalysis.storyboard */; };
+		554F798327DE8D72003A97C4 /* CallAnalysisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F798227DE8D72003A97C4 /* CallAnalysisVC.swift */; };
+		554F798627DE8DBB003A97C4 /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F798527DE8DBB003A97C4 /* SearchResultVC.swift */; };
+		554F798A27DE9938003A97C4 /* recordedCallsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F798927DE9938003A97C4 /* recordedCallsCell.swift */; };
+		554F798D27DEABCA003A97C4 /* CallAnalysisPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F798C27DEABCA003A97C4 /* CallAnalysisPresenter.swift */; };
+		554F799027DEAD4F003A97C4 /* RecordedCallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F798F27DEAD4F003A97C4 /* RecordedCallModel.swift */; };
+		554F799427DEB37D003A97C4 /* SearchResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F799327DEB37D003A97C4 /* SearchResultPresenter.swift */; };
 		5562766D27DCCEC700012A49 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5562766C27DCCEC700012A49 /* DashboardVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,11 +41,20 @@
 		553295A127DCC00A00DA82EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		553295A427DCC00A00DA82EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		553295A627DCC00A00DA82EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		553295B427DCC09200DA82EB /* initial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initial.swift; sourceTree = "<group>"; };
-		553295B827DCC0AA00DA82EB /* initial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initial.swift; sourceTree = "<group>"; };
+		553295B427DCC09200DA82EB /* initialPre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialPre.swift; sourceTree = "<group>"; };
+		553295B827DCC0AA00DA82EB /* initialMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialMod.swift; sourceTree = "<group>"; };
 		553295BE27DCC2F100DA82EB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		553426F727DD353B0079F268 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		553426FB27DD5B950079F268 /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
+		554F797327DE4715003A97C4 /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
+		554F797727DE5A61003A97C4 /* RecommendationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationCell.swift; sourceTree = "<group>"; };
+		554F797D27DE8C73003A97C4 /* callAnalysis.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = callAnalysis.storyboard; sourceTree = "<group>"; };
+		554F798227DE8D72003A97C4 /* CallAnalysisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallAnalysisVC.swift; sourceTree = "<group>"; };
+		554F798527DE8DBB003A97C4 /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
+		554F798927DE9938003A97C4 /* recordedCallsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recordedCallsCell.swift; sourceTree = "<group>"; };
+		554F798C27DEABCA003A97C4 /* CallAnalysisPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallAnalysisPresenter.swift; sourceTree = "<group>"; };
+		554F798F27DEAD4F003A97C4 /* RecordedCallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordedCallModel.swift; sourceTree = "<group>"; };
+		554F799327DEB37D003A97C4 /* SearchResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultPresenter.swift; sourceTree = "<group>"; };
 		5562766C27DCCEC700012A49 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		6201F5B463AF82A4F3CC9F24 /* Pods-EmotionDetectionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmotionDetectionApp.debug.xcconfig"; path = "Target Support Files/Pods-EmotionDetectionApp/Pods-EmotionDetectionApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A9AACD8D7CCA80E05C53E4CB /* Pods_EmotionDetectionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmotionDetectionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +126,7 @@
 		553295AF27DCC03500DA82EB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				554F798027DE8CA4003A97C4 /* Call Analysis */,
 				5562766B27DCCEAD00012A49 /* Dashboard */,
 				5532959C27DCC00700DA82EB /* ViewController.swift */,
 			);
@@ -117,6 +136,8 @@
 		553295B027DCC05400DA82EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				554F798827DE990B003A97C4 /* RecordedCalls */,
+				554F797627DE5A44003A97C4 /* Dashboard */,
 				553295B127DCC05B00DA82EB /* storyboards */,
 			);
 			path = Views;
@@ -128,6 +149,7 @@
 				5532959E27DCC00700DA82EB /* Main.storyboard */,
 				553295A327DCC00A00DA82EB /* LaunchScreen.storyboard */,
 				553426F727DD353B0079F268 /* Dashboard.storyboard */,
+				554F797D27DE8C73003A97C4 /* callAnalysis.storyboard */,
 			);
 			path = storyboards;
 			sourceTree = "<group>";
@@ -135,7 +157,8 @@
 		553295B227DCC07800DA82EB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				553295B827DCC0AA00DA82EB /* initial.swift */,
+				553295B827DCC0AA00DA82EB /* initialMod.swift */,
+				554F798F27DEAD4F003A97C4 /* RecordedCallModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -143,7 +166,10 @@
 		553295B327DCC08100DA82EB /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				553295B427DCC09200DA82EB /* initial.swift */,
+				553295B427DCC09200DA82EB /* initialPre.swift */,
+				554F797327DE4715003A97C4 /* DashboardPresenter.swift */,
+				554F798C27DEABCA003A97C4 /* CallAnalysisPresenter.swift */,
+				554F799327DEB37D003A97C4 /* SearchResultPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -154,6 +180,31 @@
 				553295BE27DCC2F100DA82EB /* AuthManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		554F797627DE5A44003A97C4 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				554F797727DE5A61003A97C4 /* RecommendationCell.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		554F798027DE8CA4003A97C4 /* Call Analysis */ = {
+			isa = PBXGroup;
+			children = (
+				554F798227DE8D72003A97C4 /* CallAnalysisVC.swift */,
+				554F798527DE8DBB003A97C4 /* SearchResultVC.swift */,
+			);
+			path = "Call Analysis";
+			sourceTree = "<group>";
+		};
+		554F798827DE990B003A97C4 /* RecordedCalls */ = {
+			isa = PBXGroup;
+			children = (
+				554F798927DE9938003A97C4 /* recordedCallsCell.swift */,
+			);
+			path = RecordedCalls;
 			sourceTree = "<group>";
 		};
 		5562766B27DCCEAD00012A49 /* Dashboard */ = {
@@ -233,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				553295A527DCC00A00DA82EB /* LaunchScreen.storyboard in Resources */,
+				554F797E27DE8C73003A97C4 /* callAnalysis.storyboard in Resources */,
 				553295A227DCC00A00DA82EB /* Assets.xcassets in Resources */,
 				553295A027DCC00700DA82EB /* Main.storyboard in Resources */,
 				553426F827DD353B0079F268 /* Dashboard.storyboard in Resources */,
@@ -289,12 +341,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				553426FC27DD5B950079F268 /* Extenstions.swift in Sources */,
-				553295B527DCC09200DA82EB /* initial.swift in Sources */,
+				554F798327DE8D72003A97C4 /* CallAnalysisVC.swift in Sources */,
+				553295B527DCC09200DA82EB /* initialPre.swift in Sources */,
+				554F799427DEB37D003A97C4 /* SearchResultPresenter.swift in Sources */,
 				553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */,
 				5562766D27DCCEC700012A49 /* DashboardVC.swift in Sources */,
-				553295B927DCC0AA00DA82EB /* initial.swift in Sources */,
+				553295B927DCC0AA00DA82EB /* initialMod.swift in Sources */,
+				554F799027DEAD4F003A97C4 /* RecordedCallModel.swift in Sources */,
+				554F798A27DE9938003A97C4 /* recordedCallsCell.swift in Sources */,
+				554F797427DE4715003A97C4 /* DashboardPresenter.swift in Sources */,
+				554F798D27DEABCA003A97C4 /* CallAnalysisPresenter.swift in Sources */,
 				5532959D27DCC00700DA82EB /* ViewController.swift in Sources */,
 				5532959927DCC00700DA82EB /* AppDelegate.swift in Sources */,
+				554F798627DE8DBB003A97C4 /* SearchResultVC.swift in Sources */,
+				554F797827DE5A61003A97C4 /* RecommendationCell.swift in Sources */,
 				5532959B27DCC00700DA82EB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
