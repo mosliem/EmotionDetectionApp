@@ -42,7 +42,7 @@ class RecommendationCell : UICollectionViewCell {
         contentView.addSubview(activityImageView)
         contentView.addSubview(ActivityName)
         contentView.addSubview(ExpectedTime)
-        contentView.layer.cornerRadius = 20
+        contentView.layer.cornerRadius = 10
         
 
     }

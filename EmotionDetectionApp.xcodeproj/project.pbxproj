@@ -29,6 +29,10 @@
 		554F799027DEAD4F003A97C4 /* RecordedCallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F798F27DEAD4F003A97C4 /* RecordedCallModel.swift */; };
 		554F799427DEB37D003A97C4 /* SearchResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F799327DEB37D003A97C4 /* SearchResultPresenter.swift */; };
 		5562766D27DCCEC700012A49 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5562766C27DCCEC700012A49 /* DashboardVC.swift */; };
+		55796A5427E0303600FAAF89 /* CircularStd-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55796A5027E0303600FAAF89 /* CircularStd-Black.otf */; };
+		55796A5527E0303600FAAF89 /* CircularStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55796A5127E0303600FAAF89 /* CircularStd-Bold.otf */; };
+		55796A5627E0303600FAAF89 /* CircularStd-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55796A5227E0303600FAAF89 /* CircularStd-Medium.otf */; };
+		55796A5727E0303600FAAF89 /* CircularStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55796A5327E0303600FAAF89 /* CircularStd-Light.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +60,10 @@
 		554F798F27DEAD4F003A97C4 /* RecordedCallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordedCallModel.swift; sourceTree = "<group>"; };
 		554F799327DEB37D003A97C4 /* SearchResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultPresenter.swift; sourceTree = "<group>"; };
 		5562766C27DCCEC700012A49 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		55796A5027E0303600FAAF89 /* CircularStd-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Black.otf"; sourceTree = "<group>"; };
+		55796A5127E0303600FAAF89 /* CircularStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Bold.otf"; sourceTree = "<group>"; };
+		55796A5227E0303600FAAF89 /* CircularStd-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Medium.otf"; sourceTree = "<group>"; };
+		55796A5327E0303600FAAF89 /* CircularStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Light.otf"; sourceTree = "<group>"; };
 		6201F5B463AF82A4F3CC9F24 /* Pods-EmotionDetectionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmotionDetectionApp.debug.xcconfig"; path = "Target Support Files/Pods-EmotionDetectionApp/Pods-EmotionDetectionApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A9AACD8D7CCA80E05C53E4CB /* Pods_EmotionDetectionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmotionDetectionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -115,6 +123,7 @@
 		553295AD27DCC01700DA82EB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				55796A4F27E0303600FAAF89 /* Fonts */,
 				5532959827DCC00700DA82EB /* AppDelegate.swift */,
 				5532959A27DCC00700DA82EB /* SceneDelegate.swift */,
 				553295A127DCC00A00DA82EB /* Assets.xcassets */,
@@ -215,6 +224,17 @@
 			path = Dashboard;
 			sourceTree = "<group>";
 		};
+		55796A4F27E0303600FAAF89 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				55796A5027E0303600FAAF89 /* CircularStd-Black.otf */,
+				55796A5127E0303600FAAF89 /* CircularStd-Bold.otf */,
+				55796A5227E0303600FAAF89 /* CircularStd-Medium.otf */,
+				55796A5327E0303600FAAF89 /* CircularStd-Light.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		827B0E5EE63CB8E71659C4B0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,11 +303,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55796A5727E0303600FAAF89 /* CircularStd-Light.otf in Resources */,
+				55796A5427E0303600FAAF89 /* CircularStd-Black.otf in Resources */,
 				553295A527DCC00A00DA82EB /* LaunchScreen.storyboard in Resources */,
 				554F797E27DE8C73003A97C4 /* callAnalysis.storyboard in Resources */,
+				55796A5627E0303600FAAF89 /* CircularStd-Medium.otf in Resources */,
 				553295A227DCC00A00DA82EB /* Assets.xcassets in Resources */,
 				553295A027DCC00700DA82EB /* Main.storyboard in Resources */,
 				553426F827DD353B0079F268 /* Dashboard.storyboard in Resources */,
+				55796A5527E0303600FAAF89 /* CircularStd-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
