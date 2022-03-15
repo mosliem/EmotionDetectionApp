@@ -3,22 +3,39 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		550F980B27DF949D00DB61B5 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 550F980A27DF949D00DB61B5 /* Chat.storyboard */; };
+		550F980E27DF951800DB61B5 /* TherapistInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F980D27DF951800DB61B5 /* TherapistInfoVC.swift */; };
+		550F981227DF9B9A00DB61B5 /* TherapistInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F981127DF9B9A00DB61B5 /* TherapistInfoCell.swift */; };
+		550F981527DFD9F700DB61B5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F981427DFD9F700DB61B5 /* Extensions.swift */; };
+		550F981827DFE6DA00DB61B5 /* TherapistChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F981727DFE6DA00DB61B5 /* TherapistChatVC.swift */; };
+		550F981B27DFE9DC00DB61B5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F981A27DFE9DC00DB61B5 /* TabBarController.swift */; };
+		550F982327E0055D00DB61B5 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F982227E0055D00DB61B5 /* ChatModel.swift */; };
+		550F982727E0092900DB61B5 /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F982627E0092900DB61B5 /* ChatPresenter.swift */; };
 		5532959927DCC00700DA82EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5532959827DCC00700DA82EB /* AppDelegate.swift */; };
 		5532959B27DCC00700DA82EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5532959A27DCC00700DA82EB /* SceneDelegate.swift */; };
 		5532959D27DCC00700DA82EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5532959C27DCC00700DA82EB /* ViewController.swift */; };
 		553295A027DCC00700DA82EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5532959E27DCC00700DA82EB /* Main.storyboard */; };
 		553295A227DCC00A00DA82EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553295A127DCC00A00DA82EB /* Assets.xcassets */; };
 		553295A527DCC00A00DA82EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553295A327DCC00A00DA82EB /* LaunchScreen.storyboard */; };
-		553295B527DCC09200DA82EB /* initial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B427DCC09200DA82EB /* initial.swift */; };
-		553295B927DCC0AA00DA82EB /* initial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B827DCC0AA00DA82EB /* initial.swift */; };
+		553295B527DCC09200DA82EB /* initialPre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B427DCC09200DA82EB /* initialPre.swift */; };
+		553295B927DCC0AA00DA82EB /* initialMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B827DCC0AA00DA82EB /* initialMod.swift */; };
 		553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295BE27DCC2F100DA82EB /* AuthManager.swift */; };
+		5CBBD4036BD623E4DD804174 /* Pods_EmotionDetectionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62689EABA986954ED2B6CCCA /* Pods_EmotionDetectionApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		550F980A27DF949D00DB61B5 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		550F980D27DF951800DB61B5 /* TherapistInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapistInfoVC.swift; sourceTree = "<group>"; };
+		550F981127DF9B9A00DB61B5 /* TherapistInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapistInfoCell.swift; sourceTree = "<group>"; };
+		550F981427DFD9F700DB61B5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		550F981727DFE6DA00DB61B5 /* TherapistChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapistChatVC.swift; sourceTree = "<group>"; };
+		550F981A27DFE9DC00DB61B5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		550F982227E0055D00DB61B5 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		550F982627E0092900DB61B5 /* ChatPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
 		5532959527DCC00700DA82EB /* EmotionDetectionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmotionDetectionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5532959827DCC00700DA82EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5532959A27DCC00700DA82EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,9 +44,12 @@
 		553295A127DCC00A00DA82EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		553295A427DCC00A00DA82EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		553295A627DCC00A00DA82EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		553295B427DCC09200DA82EB /* initial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initial.swift; sourceTree = "<group>"; };
-		553295B827DCC0AA00DA82EB /* initial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initial.swift; sourceTree = "<group>"; };
+		553295B427DCC09200DA82EB /* initialPre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialPre.swift; sourceTree = "<group>"; };
+		553295B827DCC0AA00DA82EB /* initialMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialMod.swift; sourceTree = "<group>"; };
 		553295BE27DCC2F100DA82EB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		62689EABA986954ED2B6CCCA /* Pods_EmotionDetectionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmotionDetectionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77DD0404431A06C3335B6DF1 /* Pods-EmotionDetectionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmotionDetectionApp.release.xcconfig"; path = "Target Support Files/Pods-EmotionDetectionApp/Pods-EmotionDetectionApp.release.xcconfig"; sourceTree = "<group>"; };
+		B112EB925FB9831CE63F2FEF /* Pods-EmotionDetectionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmotionDetectionApp.debug.xcconfig"; path = "Target Support Files/Pods-EmotionDetectionApp/Pods-EmotionDetectionApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +57,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CBBD4036BD623E4DD804174 /* Pods_EmotionDetectionApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D4F3E3D5ACDF27F410DAB4F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B112EB925FB9831CE63F2FEF /* Pods-EmotionDetectionApp.debug.xcconfig */,
+				77DD0404431A06C3335B6DF1 /* Pods-EmotionDetectionApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		550F981027DF9B7600DB61B5 /* TherapistChat */ = {
+			isa = PBXGroup;
+			children = (
+				550F981127DF9B9A00DB61B5 /* TherapistInfoCell.swift */,
+			);
+			path = TherapistChat;
+			sourceTree = "<group>";
+		};
 		5532958C27DCC00700DA82EB = {
 			isa = PBXGroup;
 			children = (
 				5532959727DCC00700DA82EB /* EmotionDetectionApp */,
 				5532959627DCC00700DA82EB /* Products */,
+				4D4F3E3D5ACDF27F410DAB4F /* Pods */,
+				94A4C459B99F1AF913DC89E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +119,7 @@
 				5532959827DCC00700DA82EB /* AppDelegate.swift */,
 				5532959A27DCC00700DA82EB /* SceneDelegate.swift */,
 				553295A127DCC00A00DA82EB /* Assets.xcassets */,
+				550F981427DFD9F700DB61B5 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -87,6 +128,9 @@
 			isa = PBXGroup;
 			children = (
 				5532959C27DCC00700DA82EB /* ViewController.swift */,
+				550F980D27DF951800DB61B5 /* TherapistInfoVC.swift */,
+				550F981727DFE6DA00DB61B5 /* TherapistChatVC.swift */,
+				550F981A27DFE9DC00DB61B5 /* TabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -94,6 +138,7 @@
 		553295B027DCC05400DA82EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				550F981027DF9B7600DB61B5 /* TherapistChat */,
 				553295B127DCC05B00DA82EB /* storyboards */,
 			);
 			path = Views;
@@ -104,6 +149,7 @@
 			children = (
 				5532959E27DCC00700DA82EB /* Main.storyboard */,
 				553295A327DCC00A00DA82EB /* LaunchScreen.storyboard */,
+				550F980A27DF949D00DB61B5 /* Chat.storyboard */,
 			);
 			path = storyboards;
 			sourceTree = "<group>";
@@ -111,7 +157,8 @@
 		553295B227DCC07800DA82EB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				553295B827DCC0AA00DA82EB /* initial.swift */,
+				553295B827DCC0AA00DA82EB /* initialMod.swift */,
+				550F982227E0055D00DB61B5 /* ChatModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -119,7 +166,8 @@
 		553295B327DCC08100DA82EB /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				553295B427DCC09200DA82EB /* initial.swift */,
+				553295B427DCC09200DA82EB /* initialPre.swift */,
+				550F982627E0092900DB61B5 /* ChatPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -132,6 +180,14 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		94A4C459B99F1AF913DC89E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62689EABA986954ED2B6CCCA /* Pods_EmotionDetectionApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 553295A927DCC00A00DA82EB /* Build configuration list for PBXNativeTarget "EmotionDetectionApp" */;
 			buildPhases = (
+				EE7D831A52EB617089E68D2F /* [CP] Check Pods Manifest.lock */,
 				5532959127DCC00700DA82EB /* Sources */,
 				5532959227DCC00700DA82EB /* Frameworks */,
 				5532959327DCC00700DA82EB /* Resources */,
+				2BAE35D2B090BC85BEA4F087 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,20 +249,70 @@
 			files = (
 				553295A527DCC00A00DA82EB /* LaunchScreen.storyboard in Resources */,
 				553295A227DCC00A00DA82EB /* Assets.xcassets in Resources */,
+				550F980B27DF949D00DB61B5 /* Chat.storyboard in Resources */,
 				553295A027DCC00700DA82EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2BAE35D2B090BC85BEA4F087 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EmotionDetectionApp/Pods-EmotionDetectionApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EmotionDetectionApp/Pods-EmotionDetectionApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EmotionDetectionApp/Pods-EmotionDetectionApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE7D831A52EB617089E68D2F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EmotionDetectionApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5532959127DCC00700DA82EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				553295B527DCC09200DA82EB /* initial.swift in Sources */,
+				553295B527DCC09200DA82EB /* initialPre.swift in Sources */,
+				550F982727E0092900DB61B5 /* ChatPresenter.swift in Sources */,
+				550F980E27DF951800DB61B5 /* TherapistInfoVC.swift in Sources */,
+				550F981B27DFE9DC00DB61B5 /* TabBarController.swift in Sources */,
+				550F982327E0055D00DB61B5 /* ChatModel.swift in Sources */,
+				550F981227DF9B9A00DB61B5 /* TherapistInfoCell.swift in Sources */,
+				550F981827DFE6DA00DB61B5 /* TherapistChatVC.swift in Sources */,
+				550F981527DFD9F700DB61B5 /* Extensions.swift in Sources */,
 				553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */,
-				553295B927DCC0AA00DA82EB /* initial.swift in Sources */,
+				553295B927DCC0AA00DA82EB /* initialMod.swift in Sources */,
 				5532959D27DCC00700DA82EB /* ViewController.swift in Sources */,
 				5532959927DCC00700DA82EB /* AppDelegate.swift in Sources */,
 				5532959B27DCC00700DA82EB /* SceneDelegate.swift in Sources */,
@@ -351,6 +459,7 @@
 		};
 		553295AA27DCC00A00DA82EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B112EB925FB9831CE63F2FEF /* Pods-EmotionDetectionApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -371,6 +480,7 @@
 		};
 		553295AB27DCC00A00DA82EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77DD0404431A06C3335B6DF1 /* Pods-EmotionDetectionApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
