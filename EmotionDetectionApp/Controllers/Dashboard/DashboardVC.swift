@@ -15,6 +15,7 @@ class DashboardVC: UIViewController,ChartViewDelegate {
     @IBOutlet weak var currentMoodLabel: UILabel!
     @IBOutlet weak var CurrentMoodView: UIView!
     @IBOutlet weak var profileView: UIView!
+    @IBOutlet weak var topView: UIView!
     
     var chart = LineChartView()
     private var chartViewContainer = UIView()
@@ -33,7 +34,7 @@ class DashboardVC: UIViewController,ChartViewDelegate {
         configureMoodGraphView()
         confiureRecCollectionView()
         configureChartTitle()
-        
+        configureTopView()
         
       //  view.backgroundColor = UIColor(patternImage: UIImage(named: "")!)
 
@@ -54,13 +55,13 @@ class DashboardVC: UIViewController,ChartViewDelegate {
         CurrentMoodView.layer.cornerRadius = 10
         CurrentMoodView.layer.shadowColor = UIColor.darkGray.cgColor
         CurrentMoodView.layer.shadowOffset = CGSize.zero
-        CurrentMoodView.layer.shadowRadius = 2
+        CurrentMoodView.layer.shadowRadius = 5
         CurrentMoodView.layer.shadowOpacity = 0.9
     }
     
     private func configureMoodGraphView(){
         
-        chartViewContainer.frame = CGRect(x: 30, y:CurrentMoodView.bottom + 100, width: view.bounds.width-60, height: 300)
+        chartViewContainer.frame = CGRect(x: 30, y:CurrentMoodView.bottom + 220, width: view.bounds.width-60, height: 300)
         chart = LineChartView(frame: CGRect(x: 0, y:0, width: chartViewContainer.bounds.width, height: 300))
         
         //rounded chart corner
@@ -96,6 +97,13 @@ class DashboardVC: UIViewController,ChartViewDelegate {
         chartTitle.textColor = .black
         chartTitle.font = .systemFont(ofSize: 22, weight: .bold)
         view.addSubview(chartTitle)
+    }
+    
+    func configureTopView(){
+        topView.layer.shadowColor = UIColor.lightGray.cgColor
+        topView.layer.shadowOffset = CGSize.zero
+        topView.layer.shadowRadius = 20
+        topView.layer.shadowOpacity = 1.0
     }
 }
 
