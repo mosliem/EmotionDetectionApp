@@ -18,7 +18,6 @@ class TherapistChatVC: MessagesViewController {
         Presenter = ChatPresenter(View: self)
         Presenter.configureDummy()
         setupInputButton()
-        title = Presenter.getChatName()
     }
     
     private func configureMessageDelegate(){
@@ -72,7 +71,8 @@ extension TherapistChatVC: InputBarAccessoryViewDelegate{
 
 
 
-extension TherapistChatVC{
+extension TherapistChatVC {
+    
     private func setupInputButton() {
           let button = InputBarButtonItem()
           button.setSize(CGSize(width: 35, height: 35), animated: false)
@@ -83,6 +83,7 @@ extension TherapistChatVC{
           messageInputBar.setLeftStackViewWidthConstant(to: 36, animated: false)
           messageInputBar.setStackViewItems([button], forStack: .left, animated: false)
       }
+    
     private func presentInputActionSheet() {
         let actionSheet = UIAlertController(title: "Attach Media",
                                             message: "What would you like to attach?",

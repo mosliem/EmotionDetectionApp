@@ -42,9 +42,9 @@ class ChatPresenter {
         }
         
         let message = Message(sender: currentUser,
-                                       messageId: messageId,
-                                       sentDate: Date(),
-                                       kind: .text(text))
+                              messageId: messageId,
+                              sentDate: Date(),
+                              kind: .text(text))
         messages.append(message)
         print(message)
         View.reloadMessagesCollection()
@@ -56,10 +56,10 @@ class ChatPresenter {
     private func createMessageId() -> String? {
         // date, senderID, randomInt
         let safeCurrentEmail = currentUser.displayName
-
+        
         let dateString = DateFormatter.dateFormatter.string(from: Date())
         let newIdentifier = "\(therapist.senderId)_\(safeCurrentEmail)_\(dateString)"
-
+        
         return newIdentifier
     }
     

@@ -24,6 +24,10 @@
 		553295B527DCC09200DA82EB /* initialPre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B427DCC09200DA82EB /* initialPre.swift */; };
 		553295B927DCC0AA00DA82EB /* initialMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B827DCC0AA00DA82EB /* initialMod.swift */; };
 		553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295BE27DCC2F100DA82EB /* AuthManager.swift */; };
+		557197B727E155B200AE4E9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 557197B627E155B200AE4E9C /* GoogleService-Info.plist */; };
+		557197BB27E159C400AE4E9C /* ChatFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557197BA27E159C400AE4E9C /* ChatFirestoreManager.swift */; };
+		55D7925727E3F2EA00BBE776 /* AvailableTherapistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D7925627E3F2EA00BBE776 /* AvailableTherapistModel.swift */; };
+		55D7925A27E3F39E00BBE776 /* TherapistInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D7925927E3F39E00BBE776 /* TherapistInfoPresenter.swift */; };
 		5CBBD4036BD623E4DD804174 /* Pods_EmotionDetectionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62689EABA986954ED2B6CCCA /* Pods_EmotionDetectionApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +51,10 @@
 		553295B427DCC09200DA82EB /* initialPre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialPre.swift; sourceTree = "<group>"; };
 		553295B827DCC0AA00DA82EB /* initialMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialMod.swift; sourceTree = "<group>"; };
 		553295BE27DCC2F100DA82EB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		557197B627E155B200AE4E9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		557197BA27E159C400AE4E9C /* ChatFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFirestoreManager.swift; sourceTree = "<group>"; };
+		55D7925627E3F2EA00BBE776 /* AvailableTherapistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableTherapistModel.swift; sourceTree = "<group>"; };
+		55D7925927E3F39E00BBE776 /* TherapistInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapistInfoPresenter.swift; sourceTree = "<group>"; };
 		62689EABA986954ED2B6CCCA /* Pods_EmotionDetectionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmotionDetectionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DD0404431A06C3335B6DF1 /* Pods-EmotionDetectionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmotionDetectionApp.release.xcconfig"; path = "Target Support Files/Pods-EmotionDetectionApp/Pods-EmotionDetectionApp.release.xcconfig"; sourceTree = "<group>"; };
 		B112EB925FB9831CE63F2FEF /* Pods-EmotionDetectionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmotionDetectionApp.debug.xcconfig"; path = "Target Support Files/Pods-EmotionDetectionApp/Pods-EmotionDetectionApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +117,7 @@
 				553295AF27DCC03500DA82EB /* Controllers */,
 				553295AD27DCC01700DA82EB /* Resources */,
 				553295A627DCC00A00DA82EB /* Info.plist */,
+				557197B627E155B200AE4E9C /* GoogleService-Info.plist */,
 			);
 			path = EmotionDetectionApp;
 			sourceTree = "<group>";
@@ -159,6 +168,7 @@
 			children = (
 				553295B827DCC0AA00DA82EB /* initialMod.swift */,
 				550F982227E0055D00DB61B5 /* ChatModel.swift */,
+				55D7925627E3F2EA00BBE776 /* AvailableTherapistModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,6 +178,7 @@
 			children = (
 				553295B427DCC09200DA82EB /* initialPre.swift */,
 				550F982627E0092900DB61B5 /* ChatPresenter.swift */,
+				55D7925927E3F39E00BBE776 /* TherapistInfoPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -176,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				553295BE27DCC2F100DA82EB /* AuthManager.swift */,
+				557197BA27E159C400AE4E9C /* ChatFirestoreManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -249,6 +261,7 @@
 			files = (
 				553295A527DCC00A00DA82EB /* LaunchScreen.storyboard in Resources */,
 				553295A227DCC00A00DA82EB /* Assets.xcassets in Resources */,
+				557197B727E155B200AE4E9C /* GoogleService-Info.plist in Resources */,
 				550F980B27DF949D00DB61B5 /* Chat.storyboard in Resources */,
 				553295A027DCC00700DA82EB /* Main.storyboard in Resources */,
 			);
@@ -307,6 +320,7 @@
 				550F982727E0092900DB61B5 /* ChatPresenter.swift in Sources */,
 				550F980E27DF951800DB61B5 /* TherapistInfoVC.swift in Sources */,
 				550F981B27DFE9DC00DB61B5 /* TabBarController.swift in Sources */,
+				55D7925727E3F2EA00BBE776 /* AvailableTherapistModel.swift in Sources */,
 				550F982327E0055D00DB61B5 /* ChatModel.swift in Sources */,
 				550F981227DF9B9A00DB61B5 /* TherapistInfoCell.swift in Sources */,
 				550F981827DFE6DA00DB61B5 /* TherapistChatVC.swift in Sources */,
@@ -314,8 +328,10 @@
 				553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */,
 				553295B927DCC0AA00DA82EB /* initialMod.swift in Sources */,
 				5532959D27DCC00700DA82EB /* ViewController.swift in Sources */,
+				557197BB27E159C400AE4E9C /* ChatFirestoreManager.swift in Sources */,
 				5532959927DCC00700DA82EB /* AppDelegate.swift in Sources */,
 				5532959B27DCC00700DA82EB /* SceneDelegate.swift in Sources */,
+				55D7925A27E3F39E00BBE776 /* TherapistInfoPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

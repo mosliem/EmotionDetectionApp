@@ -6,5 +6,5 @@ target 'EmotionDetectionApp' do
   use_frameworks!
 
   pod 'MessageKit', '~> 3.3.0'
-
+  pod 'Firebase/Firestore'
 end

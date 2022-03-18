@@ -9,20 +9,31 @@ import UIKit
 
 class TherapistInfoVC: UIViewController {
 
+    
     private let TherapistCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewCompositionalLayout(sectionProvider: { (section, _) -> NSCollectionLayoutSection? in
             return TherapistInfoVC.createTherapistCollection(section: section)
         }))
  
+    var presenter: TherapistInfoPresenter!
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.navigationItem.largeTitleDisplayMode = .always
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = TherapistInfoPresenter(View: self)
         configreCollectionView()
         view.backgroundColor = .white
         title = "Available Therapists"
+        presenter.getAvailableTherapistsInfo()
+        
     }
  
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
+    
+    
     
     private func configreCollectionView(){
         TherapistCollectionView.register(TherapisInfoCell.self, forCellWithReuseIdentifier: TherapisInfoCell.identifer)
@@ -53,16 +64,22 @@ class TherapistInfoVC: UIViewController {
         let section = NSCollectionLayoutSection(group: verticalGroup)
         return section
     }
+    
+    func reloadTheData(){
+        TherapistCollectionView.reloadData()
+    }
 }
+
 
 extension TherapistInfoVC : UICollectionViewDelegate , UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return presenter.getTherapitsNumber()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TherapisInfoCell.identifer, for: indexPath) as! TherapisInfoCell
-        cell.configure()
+        let model = presenter.configureTherapistModel()
+        cell.configure(model: model , indexPath: indexPath)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -78,10 +95,14 @@ extension TherapistInfoVC : UICollectionViewDelegate , UICollectionViewDataSourc
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (timer) in
             cell?.alpha = 1
         }
-        
+        presenter.didSelectTherapist(indexPath: indexPath)
+    }
+    
+    
+    func viewChatVC(){
         let vc = TherapistChatVC()
         navigationController?.pushViewController(vc, animated: true)
-        navigationItem.largeTitleDisplayMode = .never
-        
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.title = presenter.getTherapistName()
     }
 }

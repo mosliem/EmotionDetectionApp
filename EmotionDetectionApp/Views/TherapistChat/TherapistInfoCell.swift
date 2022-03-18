@@ -76,9 +76,10 @@ class TherapisInfoCell: UICollectionViewCell{
         contentView.layer.cornerRadius = 15
     }
     
-    func configure(){
-        TherapistBioLabel.text = "Compatibility with all devices able to run iOS 13.Home screen redesign with widgets.New App Library.App Clips.No full screen calls."
-        TherapistNameLabel.text = "Dr/ Sara Adam"
+    func configure(model: [AvailableTherapistModel] , indexPath: IndexPath){
+        TherapistBioLabel.text = model[indexPath.row].Bio
+        TherapistNameLabel.text = model[indexPath.row].name
         TherapistPicImageView.image = UIImage(named: "avatar")
+        print(model)
     }
 }
