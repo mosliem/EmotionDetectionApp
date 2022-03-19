@@ -33,11 +33,7 @@ class TherapisInfoCell: UICollectionViewCell{
         label.numberOfLines = 0
         return label
     }()
-//    private let cellView : UIView = {
-//       let view = UIView()
-//       view.backgroundColor = .cyan
-//       return view
-//    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         conigureCellShadow()
@@ -80,6 +76,5 @@ class TherapisInfoCell: UICollectionViewCell{
         TherapistBioLabel.text = model[indexPath.row].Bio
         TherapistNameLabel.text = model[indexPath.row].name
         TherapistPicImageView.image = UIImage(named: "avatar")
-        print(model)
     }
 }

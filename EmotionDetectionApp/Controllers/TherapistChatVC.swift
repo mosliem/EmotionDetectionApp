@@ -12,14 +12,22 @@ import InputBarAccessoryView
 class TherapistChatVC: MessagesViewController {
     
     var Presenter: ChatPresenter!
+    var therapistEmail: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMessageDelegate()
         Presenter = ChatPresenter(View: self)
-        Presenter.configureDummy()
         setupInputButton()
+        Presenter.setTherapistId(therapistEmail: therapistEmail!, therapistName: self.title!)
+        Presenter.setUserData()
+        Presenter.checkIfChatExist()
+        Presenter.getAllMessages()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    }
     private func configureMessageDelegate(){
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
@@ -32,16 +40,6 @@ class TherapistChatVC: MessagesViewController {
         messagesCollectionView.reloadData()
     }
     
-//    func setupSendButton(){
-//        let rightButton = InputBarButtonItem()
-//        let sendImage = UIImage(named: "send_button.png")
-//        rightButton.setImage(sendImage, for: UIControl.State.normal)
-//
-//        messageInputBar.setRightStackViewWidthConstant(to: CGFloat(34.0), animated: true)
-//
-//        messageInputBar.setStackViewItems([rightButton], forStack: .right, animated: false)
-//
-//    }
 }
 
 extension TherapistChatVC : MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate,MessageCellDelegate {
@@ -59,17 +57,12 @@ extension TherapistChatVC : MessagesDataSource, MessagesLayoutDelegate, Messages
     
 }
 
-
-
-extension TherapistChatVC: InputBarAccessoryViewDelegate{
+extension TherapistChatVC: InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         Presenter.sendButtonPressed(text: text)
     }
     
 }
-
-
-
 
 extension TherapistChatVC {
     
@@ -126,4 +119,5 @@ private func presentPhotoInputActionsheet() {
 
             present(actionSheet, animated: true)
         }
-}
+   }
+

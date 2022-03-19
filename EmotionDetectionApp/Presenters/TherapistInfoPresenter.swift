@@ -29,7 +29,6 @@ class TherapistInfoPresenter {
     }
     
     func configureTherapistModel() -> [AvailableTherapistModel] {
-        print("returned")
         return Therapists
     }
     func didSelectTherapist(indexPath : IndexPath){
@@ -44,7 +43,7 @@ class TherapistInfoPresenter {
         return Therapists[selectedTherapistIndex].name
     }
     
-    func getTherapistMail(indexPath: IndexPath) -> String {
-        return Therapists[indexPath.row].email
+    func getTherapistMail() -> String {
+        return Therapists[selectedTherapistIndex].email
     }
 }

@@ -7,18 +7,21 @@
 
 import UIKit
 
+
 class TherapistInfoVC: UIViewController {
 
     
     private let TherapistCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewCompositionalLayout(sectionProvider: { (section, _) -> NSCollectionLayoutSection? in
             return TherapistInfoVC.createTherapistCollection(section: section)
         }))
- 
+    
     var presenter: TherapistInfoPresenter!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         navigationController?.navigationItem.largeTitleDisplayMode = .always
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = TherapistInfoPresenter(View: self)
@@ -26,7 +29,6 @@ class TherapistInfoVC: UIViewController {
         view.backgroundColor = .white
         title = "Available Therapists"
         presenter.getAvailableTherapistsInfo()
-        
     }
  
     override func viewDidLayoutSubviews() {
@@ -100,9 +102,13 @@ extension TherapistInfoVC : UICollectionViewDelegate , UICollectionViewDataSourc
     
     
     func viewChatVC(){
+        
         let vc = TherapistChatVC()
-        navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
         vc.navigationItem.largeTitleDisplayMode = .never
         vc.title = presenter.getTherapistName()
+        vc.therapistEmail = presenter.getTherapistMail()
     }
 }
+
+

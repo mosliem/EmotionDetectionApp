@@ -7,7 +7,7 @@
 
 import Foundation
 import Firebase
-
+import MessageKit
 
 final class ChatFirestoreManager {
     private let db = Firestore.firestore()
@@ -27,6 +27,10 @@ final class ChatFirestoreManager {
         //        return
         //       }
         //      return currentUserEmail
+    }
+    
+    func storeUserID(email: String){
+        UserDefaults.standard.set(safeEmail(emailAddress: email), forKey: "userId")
     }
     
     func addNewUserToCloud(){
@@ -56,19 +60,104 @@ final class ChatFirestoreManager {
     }
     
     
-    
-    func AddNewChat(TherapistEmail: String , UserEmail: String){
-        let chatID = "\(UserEmail)_\(TherapistEmail)"
-        print(chatID)
-        db.collection("Chats").document("\(chatID)").setData([
-            "Exist" : true
-        ])
-        db.collection("Users").document(UserEmail).updateData([
-            "ChannelsId": FieldValue.arrayUnion([chatID])
-        ]) { (error) in
+    func checkChatExist(userEmail: String , therapistEmail: String, completion: @escaping (Bool) -> Void ){
+        
+        let chatId =  "\(safeEmail(emailAddress: userEmail))_\(safeEmail(emailAddress: therapistEmail))"
+        db.collection("Chats").document(chatId).getDocument { (snap, error) in
+            if  snap?.exists == true{
+                completion(true)
+            }
+            else{
+                completion(false)
+            }
         }
     }
     
+    func AddNewChat(TherapistEmail: String , UserEmail: String , completion: @escaping (Bool) -> Void){
+        let chatId =  "\(safeEmail(emailAddress: UserEmail))_\(safeEmail(emailAddress: TherapistEmail))"
+        db.collection("Chats").document("\(chatId)").setData(
+            [
+                "Exist" : true
+            ]
+        )
+        
+        db.collection("Users").document(safeEmail(emailAddress: UserEmail)).updateData(
+            [
+                "channelsId": FieldValue.arrayUnion([chatId])
+            ]
+        ) { (error) in
+            print(error?.localizedDescription as Any)
+        }
+        db.collection("Therapists").document(safeEmail(emailAddress:TherapistEmail)).updateData([
+            "channelsId": FieldValue.arrayUnion([chatId])
+        ]) { (error) in
+            print(error?.localizedDescription as Any)
+        }
+    }
+    func addNewMessage(newMessage: Message, chatId: String){
+        var message = ""
+        switch newMessage.kind {
+        
+        case .text(let messageText):
+            message = messageText
+        case .attributedText(_): break
+        case .photo(_): break
+        case .emoji(_): break
+        case .audio(_):break
+        case .video(_): break
+        case .location(_): break
+        case .contact(_): break
+        case .linkPreview(_): break
+        case .custom(_): break
+        }
+    
+        db.collection("Chats").document(chatId).collection("Messages").document(newMessage.messageId).setData([
+            "body": message,
+            "sender" : newMessage.sender.senderId,
+            "sendDate" : ChatFirestoreManager.dateFormatter.string(from:newMessage.sentDate),
+            "kind": newMessage.kind.messageKindString,
+            "messageId": newMessage.messageId
+        ])
+    }
+    
+    func AddListenerToConversion(chatId: String, completion: @escaping (Result<[Message] , Error>) -> Void){
+        
+        db.collection("Chats").document(chatId).collection("Messages").order(by: "sendDate").addSnapshotListener { (messages, error) in
+            guard let messages = messages?.documents , error == nil else{
+                completion(.failure(error!))
+                return
+            }
+            var allMessages = [Message]()
+            var messageKind: MessageKind?
+            
+            for message in messages {
+                let data = message.data()
+                
+                if let body = data["body"] as? String ,
+                   let sender = data["sender"] as? String ,
+                   let sendDate = data["sendDate"] as? String,
+                   let kind = data["kind"] as? String,
+                   let messageId = data["messageId"] as? String {
+                    
+                    if kind == "text" {
+                        messageKind = .text(body)
+                    }
+                    let date = ChatFirestoreManager.dateFormatter.date(from: sendDate)!
+                    
+                    allMessages.append(Message(sender:Sender(senderId: sender, displayName: "") , messageId: messageId, sentDate:date, kind:messageKind!))
+                }
+            }
+            completion(.success(allMessages))
+        }
+    }
+    
+    public static let dateFormatter: DateFormatter = {
+        let formattre = DateFormatter()
+        formattre.dateStyle = .medium
+        formattre.timeStyle = .long
+        formattre.locale = .current
+        return formattre
+    }()
     
 }
 
