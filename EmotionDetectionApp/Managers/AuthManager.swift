@@ -26,4 +26,23 @@ class AuthManager{
         
     }
     
+    func SignInWithFirebase(email: String, password: String){
+        Auth.auth().signIn(withEmail: email, password: password) { ( authResult, error) in
+                 if let error = error  {
+                       print(error.localizedDescription)
+                    
+                    
+                   } else {
+                       print("user logged in")
+                   }
+        }
+    }
+    func checkUserInfo() -> Bool{
+        if Auth.auth().currentUser != nil {
+            print(Auth.auth().currentUser?.uid)
+            return true
+        } else {
+            return false
+        }
+    }
 }

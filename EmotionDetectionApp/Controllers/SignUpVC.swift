@@ -18,10 +18,11 @@ class SignUpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         signUpPresenter = SignUpPresenter(View: self)
-        
         setRounded()
         
     }
+    
+
     func setRounded() {
         profilePhoto.clipsToBounds = true
         profilePhoto.layer.cornerRadius = 35

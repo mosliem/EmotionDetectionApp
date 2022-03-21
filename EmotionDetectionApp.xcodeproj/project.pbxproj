@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,9 @@
 		73FEE72427E881490084533C /* ShowAlertsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FEE72327E881490084533C /* ShowAlertsManager.swift */; };
 		73FEE72627E881670084533C /* UIView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FEE72527E881670084533C /* UIView+Loading.swift */; };
 		73FEE72827E881810084533C /* String+Trimming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FEE72727E881810084533C /* String+Trimming.swift */; };
+		73FEE72A27E8CAE40084533C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FEE72927E8CAE40084533C /* LoginVC.swift */; };
+		73FEE72C27E8CAFB0084533C /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FEE72B27E8CAFB0084533C /* LoginPresenter.swift */; };
+		73FEE72E27E8CFAA0084533C /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FEE72D27E8CFAA0084533C /* UIColor+Hex.swift */; };
 		8B6CDC1FDB78CE28EF756282 /* Pods_EmotionDetectionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B1853C485B71379CDBB1EE /* Pods_EmotionDetectionApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +50,9 @@
 		73FEE72327E881490084533C /* ShowAlertsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlertsManager.swift; sourceTree = "<group>"; };
 		73FEE72527E881670084533C /* UIView+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Loading.swift"; sourceTree = "<group>"; };
 		73FEE72727E881810084533C /* String+Trimming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Trimming.swift"; sourceTree = "<group>"; };
+		73FEE72927E8CAE40084533C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		73FEE72B27E8CAFB0084533C /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		73FEE72D27E8CFAA0084533C /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		918F5B45E1CA49E9DAD989DB /* Pods-EmotionDetectionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmotionDetectionApp.debug.xcconfig"; path = "Target Support Files/Pods-EmotionDetectionApp/Pods-EmotionDetectionApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BE0D3B1B4CA70F6CE3723E4D /* Pods-EmotionDetectionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmotionDetectionApp.release.xcconfig"; path = "Target Support Files/Pods-EmotionDetectionApp/Pods-EmotionDetectionApp.release.xcconfig"; sourceTree = "<group>"; };
 		D3B1853C485B71379CDBB1EE /* Pods_EmotionDetectionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmotionDetectionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +76,6 @@
 				918F5B45E1CA49E9DAD989DB /* Pods-EmotionDetectionApp.debug.xcconfig */,
 				BE0D3B1B4CA70F6CE3723E4D /* Pods-EmotionDetectionApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -131,6 +136,7 @@
 			children = (
 				5532959C27DCC00700DA82EB /* ViewController.swift */,
 				7307249C27E53FE900FC2570 /* SignUpVC.swift */,
+				73FEE72927E8CAE40084533C /* LoginVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -166,6 +172,7 @@
 			children = (
 				553295B427DCC09200DA82EB /* initialPresenter.swift */,
 				7307249E27E5477F00FC2570 /* SignUpPresenter.swift */,
+				73FEE72B27E8CAFB0084533C /* LoginPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -185,6 +192,7 @@
 				73FEE72327E881490084533C /* ShowAlertsManager.swift */,
 				73FEE72527E881670084533C /* UIView+Loading.swift */,
 				73FEE72727E881810084533C /* String+Trimming.swift */,
+				73FEE72D27E8CFAA0084533C /* UIColor+Hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -307,13 +315,16 @@
 			files = (
 				7307249D27E53FE900FC2570 /* SignUpVC.swift in Sources */,
 				73FEE72427E881490084533C /* ShowAlertsManager.swift in Sources */,
+				73FEE72C27E8CAFB0084533C /* LoginPresenter.swift in Sources */,
 				553295B527DCC09200DA82EB /* initialPresenter.swift in Sources */,
 				553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */,
 				73FEE72127E880D50084533C /* ValidationManager.swift in Sources */,
 				553295B927DCC0AA00DA82EB /* initialModel.swift in Sources */,
 				5532959D27DCC00700DA82EB /* ViewController.swift in Sources */,
 				5532959927DCC00700DA82EB /* AppDelegate.swift in Sources */,
+				73FEE72E27E8CFAA0084533C /* UIColor+Hex.swift in Sources */,
 				73FEE72627E881670084533C /* UIView+Loading.swift in Sources */,
+				73FEE72A27E8CAE40084533C /* LoginVC.swift in Sources */,
 				73FEE72827E881810084533C /* String+Trimming.swift in Sources */,
 				7307249F27E5477F00FC2570 /* SignUpPresenter.swift in Sources */,
 				5532959B27DCC00700DA82EB /* SceneDelegate.swift in Sources */,
