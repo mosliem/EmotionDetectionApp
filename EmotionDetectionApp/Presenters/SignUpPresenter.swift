@@ -53,4 +53,8 @@ class SignUpPresenter
         }
     }
     
+    func AuthForSignUp (email: String, password: String){
+        AuthManager.shared().createUser(email: email, password: password)
+    }
+    
 }

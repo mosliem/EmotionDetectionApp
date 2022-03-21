@@ -40,6 +40,7 @@ class SignUpVC: UIViewController {
     
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
         signUpPresenter.checkAuth()
+        signUpPresenter.AuthForSignUp(email: emailTextField.text!, password: passwordTextField.text!)
         // go to main screen
     }
     
