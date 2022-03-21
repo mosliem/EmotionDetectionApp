@@ -16,7 +16,14 @@
 		553295B527DCC09200DA82EB /* initialPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B427DCC09200DA82EB /* initialPresenter.swift */; };
 		553295B927DCC0AA00DA82EB /* initialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B827DCC0AA00DA82EB /* initialModel.swift */; };
 		553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295BE27DCC2F100DA82EB /* AuthManager.swift */; };
-		7341D7C927E3DFDB00A3BD9E /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7341D7C827E3DFDB00A3BD9E /* SignUpVC.swift */; };
+		7307249927E53E2600FC2570 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7307249827E53E2600FC2570 /* Auth.storyboard */; };
+		7307249B27E53E8300FC2570 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7307249A27E53E8300FC2570 /* GoogleService-Info.plist */; };
+		7307249D27E53FE900FC2570 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7307249C27E53FE900FC2570 /* SignUpVC.swift */; };
+		7307249F27E5477F00FC2570 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7307249E27E5477F00FC2570 /* SignUpPresenter.swift */; };
+		73FEE72127E880D50084533C /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FEE72027E880D50084533C /* ValidationManager.swift */; };
+		73FEE72427E881490084533C /* ShowAlertsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FEE72327E881490084533C /* ShowAlertsManager.swift */; };
+		73FEE72627E881670084533C /* UIView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FEE72527E881670084533C /* UIView+Loading.swift */; };
+		73FEE72827E881810084533C /* String+Trimming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FEE72727E881810084533C /* String+Trimming.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +38,14 @@
 		553295B427DCC09200DA82EB /* initialPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialPresenter.swift; sourceTree = "<group>"; };
 		553295B827DCC0AA00DA82EB /* initialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialModel.swift; sourceTree = "<group>"; };
 		553295BE27DCC2F100DA82EB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		7341D7C827E3DFDB00A3BD9E /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		7307249827E53E2600FC2570 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		7307249A27E53E8300FC2570 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7307249C27E53FE900FC2570 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		7307249E27E5477F00FC2570 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
+		73FEE72027E880D50084533C /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
+		73FEE72327E881490084533C /* ShowAlertsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlertsManager.swift; sourceTree = "<group>"; };
+		73FEE72527E881670084533C /* UIView+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Loading.swift"; sourceTree = "<group>"; };
+		73FEE72727E881810084533C /* String+Trimming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Trimming.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +78,7 @@
 		5532959727DCC00700DA82EB /* EmotionDetectionApp */ = {
 			isa = PBXGroup;
 			children = (
+				73FEE72227E881220084533C /* Extensions */,
 				553295BC27DCC0D900DA82EB /* Managers */,
 				553295B227DCC07800DA82EB /* Models */,
 				553295B027DCC05400DA82EB /* Views */,
@@ -71,6 +86,7 @@
 				553295AF27DCC03500DA82EB /* Controllers */,
 				553295AD27DCC01700DA82EB /* Resources */,
 				553295A627DCC00A00DA82EB /* Info.plist */,
+				7307249A27E53E8300FC2570 /* GoogleService-Info.plist */,
 			);
 			path = EmotionDetectionApp;
 			sourceTree = "<group>";
@@ -89,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				5532959C27DCC00700DA82EB /* ViewController.swift */,
-				7341D7C827E3DFDB00A3BD9E /* SignUpVC.swift */,
+				7307249C27E53FE900FC2570 /* SignUpVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -107,6 +123,7 @@
 			children = (
 				5532959E27DCC00700DA82EB /* Main.storyboard */,
 				553295A327DCC00A00DA82EB /* LaunchScreen.storyboard */,
+				7307249827E53E2600FC2570 /* Auth.storyboard */,
 			);
 			path = storyboards;
 			sourceTree = "<group>";
@@ -123,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				553295B427DCC09200DA82EB /* initialPresenter.swift */,
+				7307249E27E5477F00FC2570 /* SignUpPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -131,8 +149,19 @@
 			isa = PBXGroup;
 			children = (
 				553295BE27DCC2F100DA82EB /* AuthManager.swift */,
+				73FEE72027E880D50084533C /* ValidationManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		73FEE72227E881220084533C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				73FEE72327E881490084533C /* ShowAlertsManager.swift */,
+				73FEE72527E881670084533C /* UIView+Loading.swift */,
+				73FEE72727E881810084533C /* String+Trimming.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,9 +221,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7307249927E53E2600FC2570 /* Auth.storyboard in Resources */,
 				553295A527DCC00A00DA82EB /* LaunchScreen.storyboard in Resources */,
 				553295A227DCC00A00DA82EB /* Assets.xcassets in Resources */,
 				553295A027DCC00700DA82EB /* Main.storyboard in Resources */,
+				7307249B27E53E8300FC2570 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,12 +236,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7341D7C927E3DFDB00A3BD9E /* SignUpVC.swift in Sources */,
+				7307249D27E53FE900FC2570 /* SignUpVC.swift in Sources */,
+				73FEE72427E881490084533C /* ShowAlertsManager.swift in Sources */,
 				553295B527DCC09200DA82EB /* initialPresenter.swift in Sources */,
 				553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */,
+				73FEE72127E880D50084533C /* ValidationManager.swift in Sources */,
 				553295B927DCC0AA00DA82EB /* initialModel.swift in Sources */,
 				5532959D27DCC00700DA82EB /* ViewController.swift in Sources */,
 				5532959927DCC00700DA82EB /* AppDelegate.swift in Sources */,
+				73FEE72627E881670084533C /* UIView+Loading.swift in Sources */,
+				73FEE72827E881810084533C /* String+Trimming.swift in Sources */,
+				7307249F27E5477F00FC2570 /* SignUpPresenter.swift in Sources */,
 				5532959B27DCC00700DA82EB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
