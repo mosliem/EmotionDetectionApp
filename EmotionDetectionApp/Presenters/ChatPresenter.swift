@@ -7,7 +7,7 @@
 
 import Foundation
 import MessageKit
-
+import SDWebImage
 class ChatPresenter {
     
     private var messages = [Message]()
@@ -20,6 +20,10 @@ class ChatPresenter {
     }
     
     
+    
+    func getChatId() -> String{
+         return "\(ChatFirestoreManager.shared.safeEmail(emailAddress: currentUser.senderId))_\(ChatFirestoreManager.shared.safeEmail(emailAddress: therapist.senderId))"
+    }
     //MARK:- MessagesInfo
     func getMessagesCount() -> Int {
         return messages.count
@@ -51,6 +55,7 @@ class ChatPresenter {
     }
     
     func sendButtonPressed(text: String){
+        self.View.clearMessageInputBar()
         if !chatExist {
             print("not exist")
             ChatFirestoreManager.shared.AddNewChat(
@@ -58,13 +63,13 @@ class ChatPresenter {
                 UserEmail: self.currentUser.senderId
             ){(result) in
                 if result{
-                    self.addTextMessagesToCloud(text: text)
+                    self.addMessagesToCloud(text: text)
                 }
             }
         }
         else{
             print("exist")
-            addTextMessagesToCloud(text: text)
+            addMessagesToCloud(text: text)
         }
     }
     
@@ -76,7 +81,7 @@ class ChatPresenter {
         return newIdentifier
     }
     
-    private func addTextMessagesToCloud(text: String){
+    private func addMessagesToCloud(text: String){
         guard !text.replacingOccurrences(of: " ", with: "").isEmpty,
               let messageId = createMessageId()
         else {
@@ -90,6 +95,8 @@ class ChatPresenter {
                               kind: .text(text))
         ChatFirestoreManager.shared.addNewMessage(newMessage: message,chatId: chatId)
     }
+    
+    
      func getAllMessages(){
         let chatId = "\(ChatFirestoreManager.shared.safeEmail(emailAddress: currentUser.senderId))_\(ChatFirestoreManager.shared.safeEmail(emailAddress: therapist.senderId))"
         
@@ -97,15 +104,107 @@ class ChatPresenter {
             switch result{
             
             case .success(let result):
-                print(result)
+                print("result messages")
                 self.messages = result
                 self.View.reloadMessagesCollection()
+                self.View.scrollToLastMessage()
+
             case .failure(let error):
                 print(error)
             }
         }
         
     }
+    
+    
+    //MARK:- Uploading image data
+   
+    func uploadImageMessage(image : UIImage?){
+        if let imageData =  vaildateImageData(image: image) , let fileName = formatImageName(){
+            uploadImage(imageData: imageData , fileName: fileName, comletion: ({ result in
+                switch result{
+                case .success(let url):
+                    let message = self.formatImageMessage(url: url, fileName: fileName)
+                    self.addImageMessagesToCloud(message: message)
+                case .failure(let erorr):
+                    print("UploadingErorr \(erorr)")
+                    
+                }
+            }))
+        }
+        
+    }
+    
+    private func vaildateImageData(image: UIImage?)-> Data? {
+        if let imageData = image?.pngData(){
+            print(imageData)
+            return imageData
+        }
+        return nil
+    }
+    
+    
+    private func formatImageName()-> String?{
+        var fileName: String = ""
+        if  let messageId = createMessageId(){
+          fileName = "photo_message_" + messageId + ".png"
+        }
+        fileName = ChatFirestoreManager.shared.safeEmail(emailAddress: fileName)
+        return fileName
+    }
+    
+    private func formatImageMessage(url: URL, fileName: String) -> Message{
+        let placeholder = UIImage(systemName: "plus")!
+        let media = Media(url: url,
+                          image: nil,
+                          placeholderImage: placeholder,
+                          size: .zero)
+
+        let message = Message(sender:Sender(senderId: currentUser.senderId, displayName: currentUser.displayName) ,
+                              messageId: fileName,
+                              sentDate: Date(),
+                              kind: .photo(media))
+        return message
+    }
+    
+    private func uploadImage(imageData: Data, fileName: String, comletion: @escaping(Result <URL,Error> ) -> Void){
+        let chatId = "\(ChatFirestoreManager.shared.safeEmail(emailAddress: currentUser.senderId))_\(ChatFirestoreManager.shared.safeEmail(emailAddress: therapist.senderId))"
+            // Upload image
+        chatStorageManager.shared.uploadMessagePhoto(with: imageData, fileName: fileName, chatId: chatId ,completion: { result in
+                switch result {
+                case .success(let urlString):
+                    // Ready to send message
+                    print("Uploaded Message Photo: \(urlString)")
+
+                    guard let url = URL(string: urlString) else {
+                            return
+                    }
+                    comletion(.success(url))
+                case .failure(let error):
+                    comletion(.failure(error))
+                }
+            })
+        
+    }
+    
+    private func addImageMessagesToCloud(message: Message){
+        let chatId = getChatId()
+        ChatFirestoreManager.shared.addNewMessage(newMessage: message, chatId: chatId)
+    }
+    
+//    func DownloadImageMessage(indexPath: IndexPath) -> UIImageView{
+//        let message = messages[indexPath.row]
+//        switch message.kind {
+//        case .photo(let media):
+//             let imageUrl = media.url
+//            let imageView = UIImageView()
+//            imageView.sd_setImage(with: imageUrl, completed: nil)
+//            return imageView
+//        default:
+//            break
+//            
+//        }
+//    }
     //MARK:- users Data
     func setTherapistId(therapistEmail: String , therapistName: String){
         therapist = Sender(senderId: therapistEmail, displayName: therapistName)

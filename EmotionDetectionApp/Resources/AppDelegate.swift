@@ -7,7 +7,7 @@
 
 import UIKit
 import Firebase
-
+import FirebaseStorage
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         let db = Firestore.firestore()
         print(db)
+        let storage = Storage.storage()
         UserDefaults.standard.set("mosliem191299@gmail.com", forKey: "userEmail")
         print(UserDefaults.standard.string(forKey: "userEmail"))
         return true

@@ -6,11 +6,12 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseFirestore
 import MessageKit
 
 final class ChatFirestoreManager {
     private let db = Firestore.firestore()
+    private var LatestSnapshot: QuerySnapshot?
     public static var shared = ChatFirestoreManager()
     
     private init(){}
@@ -84,16 +85,19 @@ final class ChatFirestoreManager {
         db.collection("Users").document(safeEmail(emailAddress: UserEmail)).updateData(
             [
                 "channelsId": FieldValue.arrayUnion([chatId])
-            ]
-        ) { (error) in
+            ])
+        { (error) in
             print(error?.localizedDescription as Any)
         }
+        
+        
         db.collection("Therapists").document(safeEmail(emailAddress:TherapistEmail)).updateData([
             "channelsId": FieldValue.arrayUnion([chatId])
         ]) { (error) in
             print(error?.localizedDescription as Any)
         }
     }
+    
     func addNewMessage(newMessage: Message, chatId: String){
         var message = ""
         switch newMessage.kind {
@@ -101,7 +105,10 @@ final class ChatFirestoreManager {
         case .text(let messageText):
             message = messageText
         case .attributedText(_): break
-        case .photo(_): break
+        case .photo(let photoUrl):
+            if let url = photoUrl.url?.absoluteString{
+                message = url
+            }
         case .emoji(_): break
         case .audio(_):break
         case .video(_): break
@@ -117,12 +124,18 @@ final class ChatFirestoreManager {
             "sendDate" : ChatFirestoreManager.dateFormatter.string(from:newMessage.sentDate),
             "kind": newMessage.kind.messageKindString,
             "messageId": newMessage.messageId
-        ])
+        ]){ error in
+            guard let error = error else {
+                return
+            }
+            print(error)
+           
+        }
+        
     }
     
     func AddListenerToConversion(chatId: String, completion: @escaping (Result<[Message] , Error>) -> Void){
-        
-        db.collection("Chats").document(chatId).collection("Messages").order(by: "sendDate").addSnapshotListener { (messages, error) in
+        db.collection("Chats").document(chatId).collection("Messages").order(by: "sendDate").addSnapshotListener {(messages, error) in
             guard let messages = messages?.documents , error == nil else{
                 completion(.failure(error!))
                 return
@@ -132,7 +145,6 @@ final class ChatFirestoreManager {
             
             for message in messages {
                 let data = message.data()
-                
                 if let body = data["body"] as? String ,
                    let sender = data["sender"] as? String ,
                    let sendDate = data["sendDate"] as? String,
@@ -142,13 +154,27 @@ final class ChatFirestoreManager {
                     if kind == "text" {
                         messageKind = .text(body)
                     }
+                    else if kind == "photo"{
+                        guard let imageUrl = URL(string: body),
+                              let placeHolder = UIImage(systemName: "plus") else {
+                            return
+                        }
+                        let media = Media(url: imageUrl,
+                                          image: nil,
+                                          placeholderImage: placeHolder,
+                                          size: CGSize(width: 200, height:200))
+                        messageKind = .photo(media)
+                    }
                     let date = ChatFirestoreManager.dateFormatter.date(from: sendDate)!
-                    
                     allMessages.append(Message(sender:Sender(senderId: sender, displayName: "") , messageId: messageId, sentDate:date, kind:messageKind!))
                 }
             }
             completion(.success(allMessages))
         }
+    }
+    
+    func handleMessagesChanges(_ change : DocumentChange){
+    
     }
     
     public static let dateFormatter: DateFormatter = {

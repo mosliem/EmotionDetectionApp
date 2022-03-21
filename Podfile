@@ -7,4 +7,6 @@ target 'EmotionDetectionApp' do
 
   pod 'MessageKit', '~> 3.3.0'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+  pod 'SDWebImage'
 end

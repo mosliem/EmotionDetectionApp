@@ -16,8 +16,8 @@ class TherapistChatVC: MessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureMessageDelegate()
         Presenter = ChatPresenter(View: self)
+        configureMessageDelegate()
         setupInputButton()
         Presenter.setTherapistId(therapistEmail: therapistEmail!, therapistName: self.title!)
         Presenter.setUserData()
@@ -54,7 +54,6 @@ extension TherapistChatVC : MessagesDataSource, MessagesLayoutDelegate, Messages
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
         return Presenter.getMessagesCount()
     }
-    
 }
 
 extension TherapistChatVC: InputBarAccessoryViewDelegate {
@@ -62,62 +61,58 @@ extension TherapistChatVC: InputBarAccessoryViewDelegate {
         Presenter.sendButtonPressed(text: text)
     }
     
+    func clearMessageInputBar(){
+        messageInputBar.inputTextView.text = ""
+    }
+    
+    func scrollToLastMessage(){
+        messagesCollectionView.scrollToBottom(animated: true)
+    }
 }
 
-extension TherapistChatVC {
-    
+extension TherapistChatVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     private func setupInputButton() {
-          let button = InputBarButtonItem()
-          button.setSize(CGSize(width: 35, height: 35), animated: false)
-          button.setImage(UIImage(systemName: "paperclip"), for: .normal)
-          button.onTouchUpInside { [weak self] _ in
-              self?.presentInputActionSheet()
-          }
-          messageInputBar.setLeftStackViewWidthConstant(to: 36, animated: false)
-          messageInputBar.setStackViewItems([button], forStack: .left, animated: false)
-      }
+        let button = InputBarButtonItem()
+        button.setSize(CGSize(width: 36, height: 36), animated: false)
+        button.setImage(UIImage(systemName: "camera"), for: .normal)
+        button.tintColor = .green
+        button.onTouchUpInside { [weak self] _ in
+            self?.presentImagePicker()
+        }
+        messageInputBar.setLeftStackViewWidthConstant(to: 36, animated: false)
+        messageInputBar.setStackViewItems([button], forStack: .left, animated: false)
+        
+    }
     
-    private func presentInputActionSheet() {
-        let actionSheet = UIAlertController(title: "Attach Media",
-                                            message: "What would you like to attach?",
-                                            preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Photo", style: .default, handler: { [weak self] _ in
-            self?.presentPhotoInputActionsheet()
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Audio", style: .default, handler: {  _ in
-
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-        present(actionSheet, animated: true)
+    private func presentImagePicker(){
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        picker.modalPresentationStyle = .fullScreen
+        self.present(picker, animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        let image = info[.editedImage] as? UIImage
+        Presenter.uploadImageMessage(image: image)
+        
     }
     
     
-private func presentPhotoInputActionsheet() {
-            let actionSheet = UIAlertController(title: "Attach Photo",
-                                                message: "Where would you like to attach a photo from",
-                                                preferredStyle: .actionSheet)
-            actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { [weak self] _ in
-
-                let picker = UIImagePickerController()
-                picker.sourceType = .camera
-                picker.delegate = (self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate)
-                picker.allowsEditing = true
-                self?.present(picker, animated: true)
-
-            }))
-            actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { [weak self] _ in
-
-                let picker = UIImagePickerController()
-                picker.sourceType = .photoLibrary
-                picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
-                picker.allowsEditing = true
-                self?.present(picker, animated: true)
-
-            }))
-            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-            present(actionSheet, animated: true)
+    func configureMediaMessageImageView(_ imageView: UIImageView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        switch message.kind {
+        case .photo(let media):
+             let imageUrl = media.url
+            imageView.sd_setImage(with: imageUrl, completed: nil)
+        default:
+            break
+            
         }
-   }
-
+    }
+}
