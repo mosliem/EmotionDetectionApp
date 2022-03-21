@@ -84,6 +84,7 @@ extension TherapistInfoVC : UICollectionViewDelegate , UICollectionViewDataSourc
         cell.configure(model: model , indexPath: indexPath)
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         cell.contentView.layer.masksToBounds = true
         let radius = cell.contentView.layer.cornerRadius

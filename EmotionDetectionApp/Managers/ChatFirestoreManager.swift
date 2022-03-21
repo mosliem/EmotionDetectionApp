@@ -11,8 +11,9 @@ import MessageKit
 
 final class ChatFirestoreManager {
     private let db = Firestore.firestore()
-    private var LatestSnapshot: QuerySnapshot?
+    private var listener : ListenerRegistration!
     public static var shared = ChatFirestoreManager()
+    
     
     private init(){}
     func safeEmail(emailAddress: String) -> String {
@@ -117,7 +118,7 @@ final class ChatFirestoreManager {
         case .linkPreview(_): break
         case .custom(_): break
         }
-    
+        
         db.collection("Chats").document(chatId).collection("Messages").document(newMessage.messageId).setData([
             "body": message,
             "sender" : newMessage.sender.senderId,
@@ -129,17 +130,20 @@ final class ChatFirestoreManager {
                 return
             }
             print(error)
-           
+            
         }
         
     }
     
     func AddListenerToConversion(chatId: String, completion: @escaping (Result<[Message] , Error>) -> Void){
-        db.collection("Chats").document(chatId).collection("Messages").order(by: "sendDate").addSnapshotListener {(messages, error) in
-            guard let messages = messages?.documents , error == nil else{
+        
+        listener = db.collection("Chats").document(chatId).collection("Messages").order(by: "sendDate").addSnapshotListener {(messages, error) in
+            
+            guard let messages = messages?.documents , error == nil else {
                 completion(.failure(error!))
                 return
             }
+            
             var allMessages = [Message]()
             var messageKind: MessageKind?
             
@@ -151,20 +155,26 @@ final class ChatFirestoreManager {
                    let kind = data["kind"] as? String,
                    let messageId = data["messageId"] as? String {
                     
+                    
                     if kind == "text" {
                         messageKind = .text(body)
                     }
                     else if kind == "photo"{
+                        
                         guard let imageUrl = URL(string: body),
-                              let placeHolder = UIImage(systemName: "plus") else {
+                              let placeHolder = UIImage(systemName: "plus")
+                        else {
                             return
                         }
+                        
                         let media = Media(url: imageUrl,
                                           image: nil,
                                           placeholderImage: placeHolder,
-                                          size: CGSize(width: 200, height:200))
+                                          size: CGSize(width: 200, height:180))
                         messageKind = .photo(media)
                     }
+                    
+                    
                     let date = ChatFirestoreManager.dateFormatter.date(from: sendDate)!
                     allMessages.append(Message(sender:Sender(senderId: sender, displayName: "") , messageId: messageId, sentDate:date, kind:messageKind!))
                 }
@@ -173,8 +183,8 @@ final class ChatFirestoreManager {
         }
     }
     
-    func handleMessagesChanges(_ change : DocumentChange){
-    
+    func removeListener(){
+        listener.remove()
     }
     
     public static let dateFormatter: DateFormatter = {

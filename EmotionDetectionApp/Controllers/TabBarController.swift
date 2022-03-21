@@ -16,7 +16,9 @@ class TabBarController: UITabBarController {
     }
 
     private func roundTabBar(){
+        
         let layer = CAShapeLayer()
+        
         layer.path = UIBezierPath(roundedRect: CGRect(x: 30, y: self.tabBar.bounds.minY+5, width: self.tabBar.bounds.width - 60, height: self.tabBar.bounds.height+10), cornerRadius: (self.tabBar.frame.width/2)).cgPath
         layer.shadowColor = UIColor.lightGray.cgColor
         layer.shadowOffset = CGSize.zero
@@ -30,6 +32,7 @@ class TabBarController: UITabBarController {
         tabBar.barTintColor = .white
         tabBar.clipsToBounds = true
         self.tabBar.layer.insertSublayer(layer, at: 0)
+        
     }
 
 }

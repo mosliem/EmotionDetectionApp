@@ -8,7 +8,7 @@
 import UIKit
 import MessageKit
 import InputBarAccessoryView
-
+import SDWebImage
 class TherapistChatVC: MessagesViewController {
     
     var Presenter: ChatPresenter!
@@ -28,12 +28,23 @@ class TherapistChatVC: MessagesViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
     }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        if self.isMovingFromParent{
+            Presenter.didPressBack()
+        }
+    }
+    
+    
     private func configureMessageDelegate(){
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         messagesCollectionView.messageCellDelegate = self
         messageInputBar.delegate = self
+        
     }
     
     func reloadMessagesCollection(){
@@ -43,6 +54,31 @@ class TherapistChatVC: MessagesViewController {
 }
 
 extension TherapistChatVC : MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate,MessageCellDelegate {
+    private func setupInputButton() {
+        
+        // set the photo Button
+        let button = InputBarButtonItem()
+        button.setSize(CGSize(width: 40, height: 40), animated: false)
+        button.setImage(UIImage(systemName: "photo"), for: .normal)
+        button.tintColor = .link
+        button.onTouchUpInside { [weak self] _ in
+            self?.presentImagePicker()
+        }
+        messageInputBar.setLeftStackViewWidthConstant(to: 36, animated: false)
+        messageInputBar.setStackViewItems([button], forStack: .left, animated: false)
+        
+        //customize the send button
+        messageInputBar.sendButton.image = UIImage(named: "send-button")
+        messageInputBar.sendButton.image?.withTintColor(.link)
+        
+        //customize the input text bar
+        messageInputBar.inputTextView.backgroundColor = .systemGroupedBackground
+        messageInputBar.inputTextView.layer.cornerRadius = 20
+        messageInputBar.inputTextView.clipsToBounds = true
+        
+    
+    }
+    
     func currentSender() -> SenderType {
         Presenter.getCurrentUser()
     }
@@ -54,11 +90,16 @@ extension TherapistChatVC : MessagesDataSource, MessagesLayoutDelegate, Messages
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
         return Presenter.getMessagesCount()
     }
+    
+    func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+        return Presenter.getMessageBackgroundColor(message: message)
+    }
 }
 
 extension TherapistChatVC: InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         Presenter.sendButtonPressed(text: text)
+        
     }
     
     func clearMessageInputBar(){
@@ -67,52 +108,67 @@ extension TherapistChatVC: InputBarAccessoryViewDelegate {
     
     func scrollToLastMessage(){
         messagesCollectionView.scrollToBottom(animated: true)
+        
     }
 }
 
 extension TherapistChatVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    private func setupInputButton() {
-        let button = InputBarButtonItem()
-        button.setSize(CGSize(width: 36, height: 36), animated: false)
-        button.setImage(UIImage(systemName: "camera"), for: .normal)
-        button.tintColor = .green
-        button.onTouchUpInside { [weak self] _ in
-            self?.presentImagePicker()
-        }
-        messageInputBar.setLeftStackViewWidthConstant(to: 36, animated: false)
-        messageInputBar.setStackViewItems([button], forStack: .left, animated: false)
-        
-    }
     
-    private func presentImagePicker(){
+    private func presentImagePicker() {
+        
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
         picker.delegate = self
         picker.allowsEditing = true
         picker.modalPresentationStyle = .fullScreen
         self.present(picker, animated: true)
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
         picker.dismiss(animated: true, completion: nil)
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         let image = info[.editedImage] as? UIImage
-        Presenter.uploadImageMessage(image: image)
         
+        Presenter.uploadImageMessage(image: image)
     }
     
-    
     func configureMediaMessageImageView(_ imageView: UIImageView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
-        switch message.kind {
-        case .photo(let media):
-             let imageUrl = media.url
-            imageView.sd_setImage(with: imageUrl, completed: nil)
-        default:
-            break
+        
+        if message.sender.senderId == Presenter.getCurrentUser().senderId,
+           let image = Presenter.loadImageForMessage(message: message)
+        {
+            imageView.image = image
+        }
+        else{
+            
+            switch message.kind
+            {
+            case .photo(let media):
+                imageView.sd_setImage(with: media.url, completed: nil)
+            default:
+                break
+            }
             
         }
     }
+    
+    
+    func didTapImage(in cell: MessageCollectionViewCell) {
+        let indexPth = messagesCollectionView.indexPath(for: cell)
+        Presenter.didSelectImage(indexPath: indexPth)
+    }
+    
+    func pushPhotoViewVC(url: URL){
+        let vc = PhotoViewerViewController(with: url)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
+
+

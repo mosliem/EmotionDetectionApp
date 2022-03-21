@@ -24,6 +24,9 @@
 		553295B527DCC09200DA82EB /* initialPre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B427DCC09200DA82EB /* initialPre.swift */; };
 		553295B927DCC0AA00DA82EB /* initialMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B827DCC0AA00DA82EB /* initialMod.swift */; };
 		553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295BE27DCC2F100DA82EB /* AuthManager.swift */; };
+		5567F8F627E8F3E100A16EAB /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5567F8F527E8F3E100A16EAB /* CacheManager.swift */; };
+		5567F90D27E91B6A00A16EAB /* PhotoViewerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5567F90C27E91B6A00A16EAB /* PhotoViewerVC.swift */; };
+		5567F91127E92AB000A16EAB /* imageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5567F91027E92AB000A16EAB /* imageCache.swift */; };
 		557197B727E155B200AE4E9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 557197B627E155B200AE4E9C /* GoogleService-Info.plist */; };
 		557197BB27E159C400AE4E9C /* ChatFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557197BA27E159C400AE4E9C /* ChatFirestoreManager.swift */; };
 		5592D12F27E7BAFE00833863 /* chatStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592D12E27E7BAFE00833863 /* chatStorageManager.swift */; };
@@ -52,6 +55,9 @@
 		553295B427DCC09200DA82EB /* initialPre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialPre.swift; sourceTree = "<group>"; };
 		553295B827DCC0AA00DA82EB /* initialMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialMod.swift; sourceTree = "<group>"; };
 		553295BE27DCC2F100DA82EB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		5567F8F527E8F3E100A16EAB /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		5567F90C27E91B6A00A16EAB /* PhotoViewerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerVC.swift; sourceTree = "<group>"; };
+		5567F91027E92AB000A16EAB /* imageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageCache.swift; sourceTree = "<group>"; };
 		557197B627E155B200AE4E9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		557197BA27E159C400AE4E9C /* ChatFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFirestoreManager.swift; sourceTree = "<group>"; };
 		5592D12E27E7BAFE00833863 /* chatStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatStorageManager.swift; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 				550F980D27DF951800DB61B5 /* TherapistInfoVC.swift */,
 				550F981727DFE6DA00DB61B5 /* TherapistChatVC.swift */,
 				550F981A27DFE9DC00DB61B5 /* TabBarController.swift */,
+				5567F90C27E91B6A00A16EAB /* PhotoViewerVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,6 +178,7 @@
 				553295B827DCC0AA00DA82EB /* initialMod.swift */,
 				550F982227E0055D00DB61B5 /* ChatModel.swift */,
 				55D7925627E3F2EA00BBE776 /* AvailableTherapistModel.swift */,
+				5567F91027E92AB000A16EAB /* imageCache.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +199,7 @@
 				553295BE27DCC2F100DA82EB /* AuthManager.swift */,
 				557197BA27E159C400AE4E9C /* ChatFirestoreManager.swift */,
 				5592D12E27E7BAFE00833863 /* chatStorageManager.swift */,
+				5567F8F527E8F3E100A16EAB /* CacheManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -322,16 +331,19 @@
 				553295B527DCC09200DA82EB /* initialPre.swift in Sources */,
 				550F982727E0092900DB61B5 /* ChatPresenter.swift in Sources */,
 				550F980E27DF951800DB61B5 /* TherapistInfoVC.swift in Sources */,
+				5567F90D27E91B6A00A16EAB /* PhotoViewerVC.swift in Sources */,
 				550F981B27DFE9DC00DB61B5 /* TabBarController.swift in Sources */,
 				5592D12F27E7BAFE00833863 /* chatStorageManager.swift in Sources */,
 				55D7925727E3F2EA00BBE776 /* AvailableTherapistModel.swift in Sources */,
 				550F982327E0055D00DB61B5 /* ChatModel.swift in Sources */,
 				550F981227DF9B9A00DB61B5 /* TherapistInfoCell.swift in Sources */,
 				550F981827DFE6DA00DB61B5 /* TherapistChatVC.swift in Sources */,
+				5567F91127E92AB000A16EAB /* imageCache.swift in Sources */,
 				550F981527DFD9F700DB61B5 /* Extensions.swift in Sources */,
 				553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */,
 				553295B927DCC0AA00DA82EB /* initialMod.swift in Sources */,
 				5532959D27DCC00700DA82EB /* ViewController.swift in Sources */,
+				5567F8F627E8F3E100A16EAB /* CacheManager.swift in Sources */,
 				557197BB27E159C400AE4E9C /* ChatFirestoreManager.swift in Sources */,
 				5532959927DCC00700DA82EB /* AppDelegate.swift in Sources */,
 				5532959B27DCC00700DA82EB /* SceneDelegate.swift in Sources */,
