@@ -31,6 +31,6 @@ class LoginVC: UIViewController {
     
     @IBAction func LoginButtonPressed(_ sender: UIButton) {
         loginPresenter.checkAuth()
-        loginPresenter.authForSignUp(email: emailTextField.text!, password: passwordTextField.text!)
+        loginPresenter.authForLogin(email: emailTextField.text!, password: passwordTextField.text!)
     }
 }

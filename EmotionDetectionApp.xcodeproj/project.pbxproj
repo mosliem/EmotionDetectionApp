@@ -16,6 +16,8 @@
 		553295B527DCC09200DA82EB /* initialPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B427DCC09200DA82EB /* initialPresenter.swift */; };
 		553295B927DCC0AA00DA82EB /* initialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295B827DCC0AA00DA82EB /* initialModel.swift */; };
 		553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553295BE27DCC2F100DA82EB /* AuthManager.swift */; };
+		7303A4A427E9B4290097CED7 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7303A4A327E9B4290097CED7 /* UserDefaultsManager.swift */; };
+		7303A4A827E9B4BE0097CED7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7303A4A727E9B4BE0097CED7 /* Constants.swift */; };
 		7307249927E53E2600FC2570 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7307249827E53E2600FC2570 /* Auth.storyboard */; };
 		7307249B27E53E8300FC2570 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7307249A27E53E8300FC2570 /* GoogleService-Info.plist */; };
 		7307249D27E53FE900FC2570 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7307249C27E53FE900FC2570 /* SignUpVC.swift */; };
@@ -42,6 +44,8 @@
 		553295B427DCC09200DA82EB /* initialPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialPresenter.swift; sourceTree = "<group>"; };
 		553295B827DCC0AA00DA82EB /* initialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = initialModel.swift; sourceTree = "<group>"; };
 		553295BE27DCC2F100DA82EB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		7303A4A327E9B4290097CED7 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		7303A4A727E9B4BE0097CED7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7307249827E53E2600FC2570 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		7307249A27E53E8300FC2570 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7307249C27E53FE900FC2570 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 		5532959727DCC00700DA82EB /* EmotionDetectionApp */ = {
 			isa = PBXGroup;
 			children = (
+				7303A4A627E9B4A80097CED7 /* Utilities */,
 				73FEE72227E881220084533C /* Extensions */,
 				553295BC27DCC0D900DA82EB /* Managers */,
 				553295B227DCC07800DA82EB /* Models */,
@@ -182,8 +187,17 @@
 			children = (
 				553295BE27DCC2F100DA82EB /* AuthManager.swift */,
 				73FEE72027E880D50084533C /* ValidationManager.swift */,
+				7303A4A327E9B4290097CED7 /* UserDefaultsManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		7303A4A627E9B4A80097CED7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7303A4A727E9B4BE0097CED7 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		73FEE72227E881220084533C /* Extensions */ = {
@@ -318,6 +332,7 @@
 				73FEE72C27E8CAFB0084533C /* LoginPresenter.swift in Sources */,
 				553295B527DCC09200DA82EB /* initialPresenter.swift in Sources */,
 				553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */,
+				7303A4A427E9B4290097CED7 /* UserDefaultsManager.swift in Sources */,
 				73FEE72127E880D50084533C /* ValidationManager.swift in Sources */,
 				553295B927DCC0AA00DA82EB /* initialModel.swift in Sources */,
 				5532959D27DCC00700DA82EB /* ViewController.swift in Sources */,
@@ -326,6 +341,7 @@
 				73FEE72627E881670084533C /* UIView+Loading.swift in Sources */,
 				73FEE72A27E8CAE40084533C /* LoginVC.swift in Sources */,
 				73FEE72827E881810084533C /* String+Trimming.swift in Sources */,
+				7303A4A827E9B4BE0097CED7 /* Constants.swift in Sources */,
 				7307249F27E5477F00FC2570 /* SignUpPresenter.swift in Sources */,
 				5532959B27DCC00700DA82EB /* SceneDelegate.swift in Sources */,
 			);

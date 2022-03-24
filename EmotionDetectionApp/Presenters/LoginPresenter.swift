@@ -46,7 +46,7 @@ class LoginPresenter
         }
     }
     
-    func authForSignUp (email: String, password: String){
+    func authForLogin (email: String, password: String){
         AuthManager.shared().SignInWithFirebase(email: email, password: password)
         if AuthManager.shared().checkUserInfo() == true {
             print("Existing User")
