@@ -20,11 +20,6 @@ class DashboardVC: UIViewController,ChartViewDelegate {
     var chart = LineChartView()
     private var chartViewContainer = UIView()
     private let chartTitle = UILabel()
-    private let recommendationTitle = UILabel()
-    var RecommendationCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewCompositionalLayout(sectionProvider: { (section, _) -> NSCollectionLayoutSection? in
-        return DashboardVC.createCollectionViewSection(section: section)
-    }))
-    
     
     var presenter : DashboardPresenter!
     override func viewDidLoad() {
@@ -33,12 +28,9 @@ class DashboardVC: UIViewController,ChartViewDelegate {
         configureProfileImageView()
         configureCurrentMoodView()
         configureMoodGraphView()
-        confiureRecCollectionView()
         configureChartTitle()
         configureTopView()
-        configureRecommendationTitle()
         configureFonts()
-        //  view.backgroundColor = UIColor(patternImage: UIImage(named: "")!)
         
     }
     private func configureProfileImageView(){
@@ -63,52 +55,80 @@ class DashboardVC: UIViewController,ChartViewDelegate {
     
     private func configureMoodGraphView(){
         
-        chartViewContainer.frame = CGRect(x: 30, y:CurrentMoodView.bottom + 240, width: view.bounds.width-60, height: view.bounds.width)
-        chart = LineChartView(frame: CGRect(x: 0, y:0, width: chartViewContainer.bounds.width, height: 300))
+        chartViewContainer.frame = CGRect(x: 15, y:CurrentMoodView.bottom + 200, width: view.bounds.width-30, height: 350)
+        chart = LineChartView(frame: CGRect(x: 12.5, y:40, width: chartViewContainer.bounds.width-25, height: 300))
         
-        //rounded chart corner
+        // Rounded chart corner
         chart.clipsToBounds = true
-        chart.layer.cornerRadius = 20
-        chart.backgroundColor = .white
-        chartViewContainer.layer.cornerRadius = 20
+        chart.backgroundColor = .clear
+        chartViewContainer.layer.cornerRadius = 15
         
-        //getting data
+        // Getting data
         chart.data = presenter.getChartData()
+        
+        //subView
         view.addSubview(chartViewContainer)
         self.chartViewContainer.addSubview(chart)
+        chartViewContainer.backgroundColor = .white
         
-        //shadow
-        chartViewContainer.layer.shadowColor = UIColor(displayP3Red: 0.85, green: 0.85, blue: 0.94, alpha: 1.0).cgColor
+        // Shadow
+        chartViewContainer.layer.shadowColor = UIColor.lightGray.cgColor
         chartViewContainer.layer.shadowOffset = CGSize.zero
-        chartViewContainer.layer.shadowRadius = 20
+        chartViewContainer.layer.shadowRadius = 5
         chartViewContainer.layer.shadowOpacity = 1.0
-    }
-    
-    
-    private func confiureRecCollectionView(){
-        RecommendationCollectionView.delegate = self
-        RecommendationCollectionView.dataSource = self
-        RecommendationCollectionView.backgroundColor = .clear
-        RecommendationCollectionView.register(RecommendationCell.self, forCellWithReuseIdentifier: RecommendationCell.identifier)
-        RecommendationCollectionView.frame = CGRect(x: 10, y: chartViewContainer.bottom - 40, width: view.bounds.width-20, height: 80)
-        view.addSubview(RecommendationCollectionView)
+
+        // Char Fonts
+        chart.leftYAxisRenderer.axis.labelFont = .boldSystemFont(ofSize: 25)
+        chart.leftYAxisRenderer.axis.labelAlignment = .right
+        chart.xAxisRenderer.axis.labelFont = UIFont(name: "CircularStd-Black", size: 12)!
+        chart.xAxisRenderer.axis.wordWrapEnabled = true
+        chart.xAxisRenderer.axis.labelPosition = .bottomInside
+        chart.rightAxis.drawLabelsEnabled = false
+        chart.lineData?.setDrawValues(false)
+        
+        //animation
+        chart.animate(xAxisDuration: 1, yAxisDuration: 1)
+        
+        
+        // Left axis emojis
+        let leftAxis = chart.leftAxis
+        leftAxis.labelCount = 4
+        leftAxis.granularity = 1
+        leftAxis.axisMinimum = 0
+        leftAxis.axisLineWidth = 0
+        
+        leftAxis.valueFormatter = YAxisData()
+        
+        //x axis label
+        let bottomAxis = chart.xAxis
+        bottomAxis.labelCount = 7
+        bottomAxis.granularity = 1
+        bottomAxis.axisMinimum = 1
+        bottomAxis.axisLineWidth = 0
+        bottomAxis.valueFormatter = XAxisData()
+        bottomAxis.labelHeight = 30
+       
+        //right side of Grid
+        chart.xAxis.drawGridLinesEnabled = false
+        chart.rightAxis.drawGridLinesEnabled = false
+        chart.rightAxis.drawZeroLineEnabled = false
+        chart.rightAxis.axisLineColor = .clear
+        chart.xAxis.axisLineWidth = 0
+        chart.xAxis.setLabelCount(Int(chart.lineData!.xMax), force: true)
+        let lenged = chart.legend
+        lenged.enabled = false
+        
+        
     }
     
     private func configureChartTitle(){
-        chartTitle.frame = CGRect(x: chartViewContainer.left, y: chartViewContainer.top-45, width: view.bounds.width, height: 30)
-        chartTitle.text = "Daily Mood Chart"
+        chartTitle.frame = CGRect(x: chartViewContainer.left+5, y: 10, width: view.bounds.width, height: 30)
+        chartTitle.text = "Mood Chart"
         chartTitle.textColor = .black
-        chartTitle.font = UIFont(name: "CircularStd-Bold", size: 20)
-        view.addSubview(chartTitle)
+        chartTitle.font = UIFont(name: "CircularStd-Black", size: 22)
+        chartViewContainer.addSubview(chartTitle)
     }
     
-    private func configureRecommendationTitle(){
-        recommendationTitle.frame = CGRect(x: RecommendationCollectionView.left, y: RecommendationCollectionView.top-40, width: view.bounds.width, height: 30)
-        recommendationTitle.text = "Recommedation"
-        recommendationTitle.textColor = .black
-        recommendationTitle.font =  UIFont(name: "CircularStd-Bold", size: 20)
-        view.addSubview(recommendationTitle)
-    }
     private func configureTopView(){
         topView.layer.shadowColor = UIColor.lightGray.cgColor
         topView.layer.shadowOffset = CGSize.zero
@@ -124,46 +144,5 @@ class DashboardVC: UIViewController,ChartViewDelegate {
         NameLabel.layer.shadowOpacity = 0.7
         
         
-    }
-}
-
-extension DashboardVC : UICollectionViewDelegate,UICollectionViewDataSource{
-    
-    
-    static private func createCollectionViewSection(section:Int) ->NSCollectionLayoutSection {
-        let item = NSCollectionLayoutItem(
-            layoutSize: NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
-                heightDimension:.absolute(80)))
-        
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 3 , bottom: 0, trailing: 3)
-        
-        // group
-        
-        let horizontalGroup = NSCollectionLayoutGroup
-            .vertical(
-                layoutSize: NSCollectionLayoutSize(
-                    
-                    widthDimension: .fractionalWidth(1.0),
-                    heightDimension: .absolute(80)),
-                subitem:item,
-                count: 1)
-        //section
-        let section = NSCollectionLayoutSection(group: horizontalGroup)
-        section.orthogonalScrollingBehavior = .groupPagingCentered
-        return section
-    }
-    
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = RecommendationCollectionView.dequeueReusableCell(withReuseIdentifier: RecommendationCell.identifier, for: indexPath) as! RecommendationCell
-        return cell
     }
 }

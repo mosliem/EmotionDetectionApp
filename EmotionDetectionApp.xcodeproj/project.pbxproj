@@ -22,12 +22,8 @@
 		554F797427DE4715003A97C4 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F797327DE4715003A97C4 /* DashboardPresenter.swift */; };
 		554F797827DE5A61003A97C4 /* RecommendationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F797727DE5A61003A97C4 /* RecommendationCell.swift */; };
 		554F797E27DE8C73003A97C4 /* callAnalysis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 554F797D27DE8C73003A97C4 /* callAnalysis.storyboard */; };
-		554F798327DE8D72003A97C4 /* CallAnalysisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F798227DE8D72003A97C4 /* CallAnalysisVC.swift */; };
-		554F798627DE8DBB003A97C4 /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F798527DE8DBB003A97C4 /* SearchResultVC.swift */; };
-		554F798A27DE9938003A97C4 /* recordedCallsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F798927DE9938003A97C4 /* recordedCallsCell.swift */; };
-		554F798D27DEABCA003A97C4 /* CallAnalysisPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F798C27DEABCA003A97C4 /* CallAnalysisPresenter.swift */; };
-		554F799027DEAD4F003A97C4 /* RecordedCallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F798F27DEAD4F003A97C4 /* RecordedCallModel.swift */; };
-		554F799427DEB37D003A97C4 /* SearchResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F799327DEB37D003A97C4 /* SearchResultPresenter.swift */; };
+		5556C47327ECC5E000B7967D /* YAxisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5556C47227ECC5E000B7967D /* YAxisData.swift */; };
+		5556C47B27ED2D8D00B7967D /* XAxisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5556C47A27ED2D8D00B7967D /* XAxisData.swift */; };
 		5562766D27DCCEC700012A49 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5562766C27DCCEC700012A49 /* DashboardVC.swift */; };
 		55796A5427E0303600FAAF89 /* CircularStd-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55796A5027E0303600FAAF89 /* CircularStd-Black.otf */; };
 		55796A5527E0303600FAAF89 /* CircularStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55796A5127E0303600FAAF89 /* CircularStd-Bold.otf */; };
@@ -53,12 +49,8 @@
 		554F797327DE4715003A97C4 /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
 		554F797727DE5A61003A97C4 /* RecommendationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationCell.swift; sourceTree = "<group>"; };
 		554F797D27DE8C73003A97C4 /* callAnalysis.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = callAnalysis.storyboard; sourceTree = "<group>"; };
-		554F798227DE8D72003A97C4 /* CallAnalysisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallAnalysisVC.swift; sourceTree = "<group>"; };
-		554F798527DE8DBB003A97C4 /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
-		554F798927DE9938003A97C4 /* recordedCallsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recordedCallsCell.swift; sourceTree = "<group>"; };
-		554F798C27DEABCA003A97C4 /* CallAnalysisPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallAnalysisPresenter.swift; sourceTree = "<group>"; };
-		554F798F27DEAD4F003A97C4 /* RecordedCallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordedCallModel.swift; sourceTree = "<group>"; };
-		554F799327DEB37D003A97C4 /* SearchResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultPresenter.swift; sourceTree = "<group>"; };
+		5556C47227ECC5E000B7967D /* YAxisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAxisData.swift; sourceTree = "<group>"; };
+		5556C47A27ED2D8D00B7967D /* XAxisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisData.swift; sourceTree = "<group>"; };
 		5562766C27DCCEC700012A49 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		55796A5027E0303600FAAF89 /* CircularStd-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Black.otf"; sourceTree = "<group>"; };
 		55796A5127E0303600FAAF89 /* CircularStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Bold.otf"; sourceTree = "<group>"; };
@@ -135,7 +127,6 @@
 		553295AF27DCC03500DA82EB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				554F798027DE8CA4003A97C4 /* Call Analysis */,
 				5562766B27DCCEAD00012A49 /* Dashboard */,
 				5532959C27DCC00700DA82EB /* ViewController.swift */,
 			);
@@ -145,7 +136,6 @@
 		553295B027DCC05400DA82EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				554F798827DE990B003A97C4 /* RecordedCalls */,
 				554F797627DE5A44003A97C4 /* Dashboard */,
 				553295B127DCC05B00DA82EB /* storyboards */,
 			);
@@ -167,7 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				553295B827DCC0AA00DA82EB /* initialMod.swift */,
-				554F798F27DEAD4F003A97C4 /* RecordedCallModel.swift */,
+				5556C47227ECC5E000B7967D /* YAxisData.swift */,
+				5556C47A27ED2D8D00B7967D /* XAxisData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,8 +168,6 @@
 			children = (
 				553295B427DCC09200DA82EB /* initialPre.swift */,
 				554F797327DE4715003A97C4 /* DashboardPresenter.swift */,
-				554F798C27DEABCA003A97C4 /* CallAnalysisPresenter.swift */,
-				554F799327DEB37D003A97C4 /* SearchResultPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -197,23 +186,6 @@
 				554F797727DE5A61003A97C4 /* RecommendationCell.swift */,
 			);
 			path = Dashboard;
-			sourceTree = "<group>";
-		};
-		554F798027DE8CA4003A97C4 /* Call Analysis */ = {
-			isa = PBXGroup;
-			children = (
-				554F798227DE8D72003A97C4 /* CallAnalysisVC.swift */,
-				554F798527DE8DBB003A97C4 /* SearchResultVC.swift */,
-			);
-			path = "Call Analysis";
-			sourceTree = "<group>";
-		};
-		554F798827DE990B003A97C4 /* RecordedCalls */ = {
-			isa = PBXGroup;
-			children = (
-				554F798927DE9938003A97C4 /* recordedCallsCell.swift */,
-			);
-			path = RecordedCalls;
 			sourceTree = "<group>";
 		};
 		5562766B27DCCEAD00012A49 /* Dashboard */ = {
@@ -365,21 +337,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				553426FC27DD5B950079F268 /* Extenstions.swift in Sources */,
-				554F798327DE8D72003A97C4 /* CallAnalysisVC.swift in Sources */,
 				553295B527DCC09200DA82EB /* initialPre.swift in Sources */,
-				554F799427DEB37D003A97C4 /* SearchResultPresenter.swift in Sources */,
 				553295BF27DCC2F100DA82EB /* AuthManager.swift in Sources */,
 				5562766D27DCCEC700012A49 /* DashboardVC.swift in Sources */,
 				553295B927DCC0AA00DA82EB /* initialMod.swift in Sources */,
-				554F799027DEAD4F003A97C4 /* RecordedCallModel.swift in Sources */,
-				554F798A27DE9938003A97C4 /* recordedCallsCell.swift in Sources */,
+				5556C47327ECC5E000B7967D /* YAxisData.swift in Sources */,
 				554F797427DE4715003A97C4 /* DashboardPresenter.swift in Sources */,
-				554F798D27DEABCA003A97C4 /* CallAnalysisPresenter.swift in Sources */,
 				5532959D27DCC00700DA82EB /* ViewController.swift in Sources */,
 				5532959927DCC00700DA82EB /* AppDelegate.swift in Sources */,
-				554F798627DE8DBB003A97C4 /* SearchResultVC.swift in Sources */,
 				554F797827DE5A61003A97C4 /* RecommendationCell.swift in Sources */,
 				5532959B27DCC00700DA82EB /* SceneDelegate.swift in Sources */,
+				5556C47B27ED2D8D00B7967D /* XAxisData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

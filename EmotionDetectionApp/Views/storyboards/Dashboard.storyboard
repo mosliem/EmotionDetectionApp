@@ -157,7 +157,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nwB-fT-aIv"/>
-                        <color key="backgroundColor" red="0.96119827030000005" green="0.97030693290000003" blue="0.98351949449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TjS-2N-A6j" firstAttribute="trailing" secondItem="nwB-fT-aIv" secondAttribute="trailing" id="67z-HT-TKa"/>
                             <constraint firstItem="TjS-2N-A6j" firstAttribute="top" secondItem="2KG-mt-OXj" secondAttribute="top" id="Ovg-2W-AC4"/>
@@ -183,6 +183,9 @@
     <resources>
         <image name="download" width="300" height="168"/>
         <image name="emoji" width="512" height="512"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
