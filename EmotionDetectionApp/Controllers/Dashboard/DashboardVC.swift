@@ -113,11 +113,11 @@ class DashboardVC: UIViewController,ChartViewDelegate {
         
         // Left axis emojis
         let leftAxis = lineChart.leftAxis
+        leftAxis.forceLabelsEnabled = true
         leftAxis.labelCount = 4
-        leftAxis.granularity = 1
+        leftAxis.granularity = 0
         leftAxis.axisMinimum = 0
         leftAxis.axisLineWidth = 0
-        
         leftAxis.valueFormatter = YAxisData()
         
         //x axis label
